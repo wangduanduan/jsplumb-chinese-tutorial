@@ -1,0 +1,8 @@
+{
+  "name": "flowchart-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/wangduanduan/flowchart-tutorial.git",
+  "author": "wangduanduan <1779706607@qq.com>",
+  "license": "MIT"
+}

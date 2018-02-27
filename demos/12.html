@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+  <style>
+    #diagramContainer {
+      padding: 20px;
+      width: 80%;
+      height: 400px;
+      border: 1px solid gray;
+      background-image: url(http://p3alsaatj.bkt.clouddn.com/20180227163310_1bVYeW_grid.jpeg);
+      background-repeat: repeat;
+    }
+
+    .item {
+      position: absolute;
+      height: 80px;
+      width: 80px;
+      border: 1px solid blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="diagramContainer">
+    <div id="item_left" class="item"></div>
+    <div id="item_right" class="item" style="left:150px;"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/1.4.1/jquery.jsPlumb-1.4.1-all-min.js"></script>
+
+  <script>
+    /* global jsPlumb, $ */
+    $('.item').resizable({
+      resize: function (event, ui) {
+        jsPlumb.repaint(ui.helper)
+      },
+      handles: 'all'
+    })
+
+    jsPlumb.ready(function () {
+      jsPlumb.connect({
+        source: 'item_left',
+        target: 'item_right',
+        endpoint: 'Rectangle'
+      })
+
+      jsPlumb.draggable('item_left', {
+        containment: 'parent',
+        grid: [10, 10]
+      })
+      jsPlumb.draggable('item_right', {
+        containment: 'parent',
+        grid: [10, 10]
+      })
+    })
+  </script>
+</body>
+
+</html>
