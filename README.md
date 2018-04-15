@@ -453,7 +453,7 @@ jsPlumb.connect({ uuids: [fromId, toId] })
 
 # 3. 实战项目 一个可视化IVR编辑器
 
-项目地址：https://github.com/wangduanduan/visual-ivr, 该项目还在开发完善中，不过已经具备基本功能。
+项目地址：https://github.com/wangduanduan/visual-ivr 该项目还在开发完善中，不过已经具备基本功能。
 
 ![](http://p3alsaatj.bkt.clouddn.com/20180414105705_PbucQp_Jietu20180414-105646.jpeg)
 
