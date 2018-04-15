@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/wangduanduan/flowchart-tutorial.git",
   "author": "wangduanduan <1779706607@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mustache": "^2.3.0"
+  }
 }

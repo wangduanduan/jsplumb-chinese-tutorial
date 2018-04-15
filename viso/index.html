@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>jsplumb-viso</title>
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="container-fluid">
+      <div class="row">
+        <div id="side-buttons" class="col-md-1 bg-info min-height">
+          <div>
+            <a class="btn btn-success btn-controler" href="#" data-template="playAudioNode" role="button">放音</a>
+            <!-- <a class="btn btn-success btn-controler" href="#" role="button">收号</a>
+            <a class="btn btn-success btn-controler" href="#" role="button">分支</a>
+            <a class="btn btn-success btn-controler" href="#" role="button">转人工</a> -->
+          </div>
+        </div>
+        <div class="col-md-11 bg-success min-height" id="drop-bg">
+          内容区域
+          <div id="begin-node" class="fixed-node">
+            <a class="btn btn-default" href="#" role="button">开始节点</a>
+          </div>
+          <div class="pa">
+            <a class="btn btn-success" href="#" role="button">放音
+              &nbsp;&nbsp;
+              <span><i class="fa fa-cog"></i></span>
+              &nbsp;&nbsp;
+              |&nbsp;&nbsp;
+              <span><i class="fa fa-trash"></i></span>
+            </a>
+          </div>
+          <div id="end-node" class="fixed-node">
+            <a class="btn btn-default" href="#" role="button">结束节点</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.bootcss.com/node-uuid/1.4.8/uuid.min.js"></script>
+  <script src="https://cdn.bootcss.com/mustache.js/2.3.0/mustache.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdn.bootcss.com/jsPlumb/1.7.6/jquery.jsPlumb.min.js"></script>
+  <script src="./config.js"></script>
+  <script src="./index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+.min-height{
+  height: 500px;
+}
+.btn{
+  z-index: 2;
+}
+.pa{
+  position: absolute;
+}
+.fixed-node{
+  position: absolute;
+  top: 200px;
+}
+#begin-node{
+
+}
+
+#end-node{
+  left: 800px;
+}
