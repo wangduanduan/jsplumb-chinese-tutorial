@@ -1,21 +1,676 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-  <link rel="stylesheet" href="./src/css/index.css">
-</head>
-<body>
-  
-  <div id="jsplumb-container">
+  <html>
+    <head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/wangdd/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.3.4/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
 
-  </div>
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
 
-  <script src="./src/lib/jquery.min.js"></script>
-  <script src="./src/lib/jquery.jsPlumb-1.7.2.js"></script>
-  <script src="./src/index.js"></script>
-</body>
-</html>
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <ul>
+<li><a href="#1-jsplumb-%E4%B8%AD%E6%96%87%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B">1. jsplumb 中文基础教程</a>
+<ul>
+<li><a href="#11-%E4%BB%80%E4%B9%88%E6%98%AFjsplumb">1.1. 什么是jsplumb？</a></li>
+<li><a href="#12-jsplumb%E8%83%BD%E5%B9%B2%E4%BB%80%E4%B9%88">1.2. jsplumb能干什么？</a></li>
+<li><a href="#13-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">1.3. 基本概念</a></li>
+</ul>
+</li>
+<li><a href="#2-%E5%9F%BA%E7%A1%80demos">2. 基础demos</a>
+<ul>
+<li><a href="#21-%E8%BF%9E%E6%8E%A5%E4%B8%A4%E4%B8%AA%E8%8A%82%E7%82%B9">2.1. 连接两个节点</a></li>
+<li><a href="#22-%E5%8F%AF%E6%8B%96%E5%8A%A8%E8%8A%82%E7%82%B9">2.2. 可拖动节点</a></li>
+<li><a href="#23-%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0">2.3. 连接的其他参数</a></li>
+<li><a href="#24-%E8%AE%BE%E7%BD%AE%E8%BF%9E%E6%8E%A5%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC">2.4. 设置连接的默认值</a></li>
+<li><a href="#25-%E7%BB%99%E8%BF%9E%E6%8E%A5%E5%8A%A0%E4%B8%8A%E6%A0%B7%E5%BC%8F">2.5. 给连接加上样式</a></li>
+<li><a href="#26-%E7%BB%99%E8%BF%9E%E6%8E%A5%E5%8A%A0%E4%B8%8A%E7%AE%AD%E5%A4%B4">2.6. 给连接加上箭头</a></li>
+<li><a href="#27-%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E7%AB%AF%E7%82%B9">2.7. 增加一个端点</a></li>
+<li><a href="#28-%E6%8B%96%E5%8A%A8%E5%88%9B%E5%BB%BA%E8%BF%9E%E6%8E%A5">2.8. 拖动创建连接</a></li>
+<li><a href="#29-%E7%BB%99%E7%AB%AF%E7%82%B9%E5%A2%9E%E5%8A%A0%E6%A0%B7%E5%BC%8F">2.9. 给端点增加样式</a></li>
+<li><a href="#210-%E8%8A%82%E7%82%B9%E6%94%B9%E5%8F%98%E5%B0%BA%E5%AF%B8">2.10. 节点改变尺寸</a></li>
+<li><a href="#211-%E9%99%90%E5%88%B6%E8%8A%82%E7%82%B9%E6%8B%96%E5%8A%A8%E5%8C%BA%E5%9F%9F">2.11. 限制节点拖动区域</a></li>
+<li><a href="#212-%E8%8A%82%E7%82%B9%E7%BD%91%E6%A0%BC%E5%AF%B9%E9%BD%90">2.12. 节点网格对齐</a></li>
+<li><a href="#213-%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4%E8%BF%9E%E7%BA%BF">2.13. 点击删除连线</a></li>
+<li><a href="#214-%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E5%8C%85%E6%8B%AC%E8%8A%82%E7%82%B9%E7%9B%B8%E5%85%B3%E7%9A%84%E8%BF%9E%E6%8E%A5">2.14. 删除节点，包括节点相关的连接</a></li>
+<li><a href="#215-%E9%80%9A%E8%BF%87%E7%BC%96%E7%A0%81%E8%BF%9E%E6%8E%A5endpoint">2.15. 通过编码连接endPoint</a></li>
+</ul>
+</li>
+<li><a href="#3-%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E4%B8%80%E4%B8%AA%E5%8F%AF%E8%A7%86%E5%8C%96ivr%E7%BC%96%E8%BE%91%E5%99%A8">3. 实战项目 一个可视化IVR编辑器</a></li>
+<li><a href="#4-%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90">4. 参考资源</a></li>
+</ul>
+<h1 class="mume-header" id="1-jsplumb-%E4%B8%AD%E6%96%87%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B">1. jsplumb 中文基础教程</h1>
+
+<p>在线地址：<a href="https://wdd.js.org/jsplumb-chinese-tutorial/">https://wdd.js.org/jsplumb-chinese-tutorial/</a></p>
+<p>仓库地址：<a href="https://github.com/wangduanduan/jsplumb-chinese-tutorial.git">https://github.com/wangduanduan/jsplumb-chinese-tutorial.git</a></p>
+<h2 class="mume-header" id="11-%E4%BB%80%E4%B9%88%E6%98%AFjsplumb">1.1. 什么是jsplumb？</h2>
+
+<p>你有没有想过在你的网站上展示图表或者甚至在浏览器应用程序中使用它？用jsPlumb你可以！它是完全免费的，并根据MIT许可证提供。您可以直接从jsPlumb github网站下载框架。</p>
+<p>该项目主要由Simon Porritt开发，他在澳大利亚西德尼担任网络开发人员。 jsPlumb由他积极开发。作为许多优秀的开发人员，他似乎更喜欢开发代码而不是编写教程，这就是为什么我提供一个简单的入门教程。</p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180227184229_wKfyUd_jsPlumb_Diagram_Example.jpeg" alt=""></p>
+<h2 class="mume-header" id="12-jsplumb%E8%83%BD%E5%B9%B2%E4%BB%80%E4%B9%88">1.2. jsplumb能干什么？</h2>
+
+<p>那么如果你应该使用它取决于你想用jsPlumb做什么。该框架适用于必须绘制图表的Web应用程序，例如类似于Visio的应用程序或工作流程设计器等。由于图表项目和连接的所有参数都是非常精细可控的，因此您可以绘制您可以想到的任何类型的图表的！</p>
+<h2 class="mume-header" id="13-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">1.3. 基本概念</h2>
+
+<ul>
+<li>Souce 源节点</li>
+<li>Target 目标节点</li>
+<li>Anchor 锚点</li>
+<li>Endpoint 端点</li>
+<li>Connector 连接</li>
+</ul>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180227151857_Pu4O9c_jsPlumb-Connector-Components.jpeg" alt=""></p>
+<h1 class="mume-header" id="2-%E5%9F%BA%E7%A1%80demos">2. 基础demos</h1>
+
+<p><code>注意：点击标题即可查看demo的在线效果</code></p>
+<h2 class="mume-header" id="21-%E8%BF%9E%E6%8E%A5%E4%B8%A4%E4%B8%AA%E8%8A%82%E7%82%B9">2.1. 连接两个节点</h2>
+
+<p>demo: <a href="https://wdd.js.org/jsplumb-chinese-tutorial/demos/01.html">https://wdd.js.org/jsplumb-chinese-tutorial/demos/01.html</a></p>
+<p>jsPlumb.ready方法和jquery的ready方法差不多的功能，jsPlumb.connect用于建立连线</p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180415224517_SK0PUc_Jietu20180415-224454.jpeg" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>&lt;div id=&quot;diagramContainer&quot;&gt;
+    &lt;div id=&quot;item_left&quot; class=&quot;item&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;item_right&quot; class=&quot;item&quot; style=&quot;margin-left:50px;&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;https://cdn.bootcss.com/jsPlumb/2.6.8/js/jsplumb.min.js&quot;&gt;&lt;/script&gt;
+
+  &lt;script&gt;
+    /* global jsPlumb */
+    jsPlumb.ready(function () {
+      jsPlumb.connect({
+        source: &apos;item_left&apos;,
+        target: &apos;item_right&apos;,
+        endpoint: &apos;Dot&apos;
+      })
+    })
+  &lt;/script&gt;
+</code></pre><p>参数说明：<br>
+jsPlumb.connect(config) return connection</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数类型</th>
+<th>是否必须</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td>String,Object,Endpoint</td>
+<td>是</td>
+<td>连线源的标识，可以是id, element, 或者Endpoint</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String,Object,Endpoint</td>
+<td>是</td>
+<td>连线目标的标识，可以是id, element, 或者Endpoint</td>
+</tr>
+<tr>
+<td>endpoint</td>
+<td>String</td>
+<td>可选</td>
+<td>端点类型，形状</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumbInstance.html#method_connect">&gt;&gt;&gt; connect方法详情</a></p>
+<h2 class="mume-header" id="22-%E5%8F%AF%E6%8B%96%E5%8A%A8%E8%8A%82%E7%82%B9">2.2. 可拖动节点</h2>
+
+<p>demo: <a href="https://wdd.js.org/jsplumb-chinese-tutorial/demos/02.html">https://wdd.js.org/jsplumb-chinese-tutorial/demos/02.html</a></p>
+<p>使用draggable可以让节点被拖动，<a href="https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumbInstance.html#method_draggable">draggable方法参考</a></p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180227191655_GOJLi1_Jietu20180227-191647.jpeg" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>&lt;div id=&quot;diagramContainer&quot;&gt;
+    &lt;div id=&quot;item_left&quot; class=&quot;item&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;item_right&quot; class=&quot;item&quot; style=&quot;left:150px;&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;https://cdn.bootcss.com/jsPlumb/2.6.8/js/jsplumb.min.js&quot;&gt;&lt;/script&gt;
+
+  &lt;script&gt;
+    /* global jsPlumb */
+    jsPlumb.ready(function () {
+      jsPlumb.connect({
+        source: &apos;item_left&apos;,
+        target: &apos;item_right&apos;,
+        endpoint: &apos;Rectangle&apos;
+      })
+
+      jsPlumb.draggable(&apos;item_left&apos;)
+      jsPlumb.draggable(&apos;item_right&apos;)
+    })
+  &lt;/script&gt;
+</code></pre><h2 class="mume-header" id="23-%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0">2.3. 连接的其他参数</h2>
+
+<p>demo: <a href="https://wdd.js.org/jsplumb-chinese-tutorial/demos/03.html">https://wdd.js.org/jsplumb-chinese-tutorial/demos/03.html</a></p>
+<p>可以通过connector去设置链接线的形状，如直线或者曲线之类的。anchor可以去设置锚点的位置。</p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180227192135_1AWJH6_Jietu20180227-192120.jpeg" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>&lt;div id=&quot;diagramContainer&quot;&gt;
+    &lt;div id=&quot;item_left&quot; class=&quot;item&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;item_right&quot; class=&quot;item&quot; style=&quot;left:150px;&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;https://cdn.bootcss.com/jsPlumb/2.6.8/js/jsplumb.min.js&quot;&gt;&lt;/script&gt;
+
+  &lt;script&gt;
+    /* global jsPlumb */
+    jsPlumb.ready(function () {
+      jsPlumb.connect({
+        source: &apos;item_left&apos;,
+        target: &apos;item_right&apos;,
+        endpoint: &apos;Rectangle&apos;,
+        connector: [&apos;Bezier&apos;],
+        anchor: [&apos;Left&apos;, &apos;Right&apos;]
+      })
+
+      jsPlumb.draggable(&apos;item_left&apos;)
+      jsPlumb.draggable(&apos;item_right&apos;)
+    })
+  &lt;/script&gt;
+</code></pre><h2 class="mume-header" id="24-%E8%AE%BE%E7%BD%AE%E8%BF%9E%E6%8E%A5%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC">2.4. 设置连接的默认值</h2>
+
+<p>demo: <a href="https://wdd.js.org/jsplumb-chinese-tutorial/demos/04.html">https://wdd.js.org/jsplumb-chinese-tutorial/demos/04.html</a></p>
+<p>很多连线都是相同设置的情况下，可以将配置抽离出来，作为一个单独的变量，作为connect的第二个参数传入。实际上connect的第二个参数会和第一个参数merge，作为一个整体。</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>&lt;script&gt;
+    /* global jsPlumb */
+    jsPlumb.ready(function () {
+      var common = {
+        endpoint: &apos;Rectangle&apos;,
+        connector: [&apos;Bezier&apos;],
+        anchor: [&apos;Left&apos;, &apos;Right&apos;]
+      }
+
+      jsPlumb.connect({
+        source: &apos;item_left&apos;,
+        target: &apos;item_right&apos;
+      }, common)
+
+      jsPlumb.draggable(&apos;item_left&apos;)
+      jsPlumb.draggable(&apos;item_right&apos;)
+    })
+  &lt;/script&gt;
+</code></pre><h2 class="mume-header" id="25-%E7%BB%99%E8%BF%9E%E6%8E%A5%E5%8A%A0%E4%B8%8A%E6%A0%B7%E5%BC%8F">2.5. 给连接加上样式</h2>
+
+<p>demo: <a href="https://wdd.js.org/jsplumb-chinese-tutorial/demos/05.html">https://wdd.js.org/jsplumb-chinese-tutorial/demos/05.html</a></p>
+<p>例如给连线设置不同的颜色，设置不同的粗细之类的。</p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180227192811_AA9fXd_Jietu20180227-192758.jpeg" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>jsPlumb.connect({
+  source: &apos;item_left&apos;,
+  target: &apos;item_right&apos;,
+  paintStyle: { stroke: &apos;lightgray&apos;, strokeWidth: 3 },
+  endpointStyle: { fill: &apos;lightgray&apos;, outlineStroke: &apos;darkgray&apos;, outlineWidth: 2 }
+}, common)
+</code></pre><h2 class="mume-header" id="26-%E7%BB%99%E8%BF%9E%E6%8E%A5%E5%8A%A0%E4%B8%8A%E7%AE%AD%E5%A4%B4">2.6. 给连接加上箭头</h2>
+
+<p>demo: <a href="https://wdd.js.org/jsplumb-chinese-tutorial/demos/06.html">https://wdd.js.org/jsplumb-chinese-tutorial/demos/06.html</a></p>
+<p>箭头实际上是通过设置<code>overlays</code>去设置的，可以设置箭头的长宽以及箭头的位置，location 0.5表示箭头位于中间，location 1表示箭头设置在连线末端。 一根连线是可以添加多个箭头的。</p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180227193801_OejsPz_Jietu20180227-193752.jpeg" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>jsPlumb.connect({
+  source: &apos;item_left&apos;,
+  target: &apos;item_right&apos;,
+  paintStyle: { stroke: &apos;lightgray&apos;, strokeWidth: 3 },
+  endpointStyle: { fill: &apos;lightgray&apos;, outlineStroke: &apos;darkgray&apos;, outlineWidth: 2 },
+  overlays: [ [&apos;Arrow&apos;, { width: 12, length: 12, location: 0.5 }] ]
+}, common)
+</code></pre><h2 class="mume-header" id="27-%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E7%AB%AF%E7%82%B9">2.7. 增加一个端点</h2>
+
+<p>demo: <a href="https://wdd.js.org/jsplumb-chinese-tutorial/demos/07.html">https://wdd.js.org/jsplumb-chinese-tutorial/demos/07.html</a></p>
+<p>addEndpoint方法可以用来增加端点，<a href="https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumbInstance.html#method_addEndpoint">具体使用请看</a></p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180227193308_wYaELY_Jietu20180227-193254.jpeg" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>    jsPlumb.ready(function () {
+      jsPlumb.addEndpoint(&apos;item_left&apos;, {
+        anchors: [&apos;Right&apos;]
+      })
+    })
+</code></pre><h2 class="mume-header" id="28-%E6%8B%96%E5%8A%A8%E5%88%9B%E5%BB%BA%E8%BF%9E%E6%8E%A5">2.8. 拖动创建连接</h2>
+
+<p>demo: <a href="https://wdd.js.org/jsplumb-chinese-tutorial/demos/08.html">https://wdd.js.org/jsplumb-chinese-tutorial/demos/08.html</a></p>
+<p>如果你将<code>isSource</code>和<code>isTarget</code>设置成true，那么久可以用户在拖动时，自动创建链接。</p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180227193546_yg6Z4L_Jietu20180227-193527.jpeg" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>jsPlumb.ready(function () {
+      jsPlumb.setContainer(&apos;diagramContainer&apos;)
+
+      var common = {
+        isSource: true,
+        isTarget: true,
+        connector: [&apos;Straight&apos;]
+      }
+
+      jsPlumb.addEndpoint(&apos;item_left&apos;, {
+        anchors: [&apos;Right&apos;]
+      }, common)
+
+      jsPlumb.addEndpoint(&apos;item_right&apos;, {
+        anchor: &apos;Left&apos;
+      }, common)
+
+      jsPlumb.addEndpoint(&apos;item_right&apos;, {
+        anchor: &apos;Right&apos;
+      }, common)
+    })
+</code></pre><p><code>一般来说拖动创建的链接，可以再次拖动，让链接断开。如果不想触发这种行为，可以设置。</code></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>  jsPlumb.importDefaults({
+    ConnectionsDetachable: false
+  })
+</code></pre><h2 class="mume-header" id="29-%E7%BB%99%E7%AB%AF%E7%82%B9%E5%A2%9E%E5%8A%A0%E6%A0%B7%E5%BC%8F">2.9. 给端点增加样式</h2>
+
+<p>demo: <a href="https://wdd.js.org/jsplumb-chinese-tutorial/demos/09.html">https://wdd.js.org/jsplumb-chinese-tutorial/demos/09.html</a></p>
+<p>通过设置各种 <code>*Style</code>来改变链接或者端点的样式。</p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180227194136_zIlkwP_Jietu20180227-194127.jpeg" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>jsPlumb.ready(function () {
+      jsPlumb.setContainer(&apos;diagramContainer&apos;)
+
+      var common = {
+        isSource: true,
+        isTarget: true,
+        connector: &apos;Straight&apos;,
+        endpoint: &apos;Dot&apos;,
+        paintStyle: {
+          fill: &apos;white&apos;,
+          outlineStroke: &apos;blue&apos;,
+          strokeWidth: 3
+        },
+        hoverPaintStyle: {
+          outlineStroke: &apos;lightblue&apos;
+        },
+        connectorStyle: {
+          outlineStroke: &apos;green&apos;,
+          strokeWidth: 1
+        },
+        connectorHoverStyle: {
+          strokeWidth: 2
+        }
+      }
+
+      jsPlumb.addEndpoint(&apos;item_left&apos;, {
+        anchors: [&apos;Right&apos;]
+      }, common)
+
+      jsPlumb.addEndpoint(&apos;item_right&apos;, {
+        anchor: &apos;Left&apos;
+      }, common)
+
+      jsPlumb.addEndpoint(&apos;item_right&apos;, {
+        anchor: &apos;Right&apos;
+      }, common)
+    })
+</code></pre><h2 class="mume-header" id="210-%E8%8A%82%E7%82%B9%E6%94%B9%E5%8F%98%E5%B0%BA%E5%AF%B8">2.10. 节点改变尺寸</h2>
+
+<p>demo: <a href="https://wdd.js.org/jsplumb-chinese-tutorial/demos/10.html">https://wdd.js.org/jsplumb-chinese-tutorial/demos/10.html</a></p>
+<p>jsplumb实际上不支持改变节点大小，实际上只能通过jquery ui resizable 方法去改变。</p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180227195351_B18Pal_Jietu20180227-195338.jpeg" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>&lt;div id=&quot;diagramContainer&quot;&gt;
+    &lt;div id=&quot;item_left&quot; class=&quot;item&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;item_right&quot; class=&quot;item&quot; style=&quot;left:150px;&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;https://code.jquery.com/jquery-1.11.3.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;./lib/jquery.jsplumb.js&quot;&gt;&lt;/script&gt;
+
+  &lt;script&gt;
+    /* global jsPlumb, $ */
+    $(&apos;.item&apos;).resizable({
+      resize: function (event, ui) {
+        jsPlumb.repaint(ui.helper)
+      }
+    })
+
+    jsPlumb.ready(function () {
+      jsPlumb.connect({
+        source: &apos;item_left&apos;,
+        target: &apos;item_right&apos;,
+        endpoint: &apos;Rectangle&apos;
+      })
+
+      jsPlumb.draggable(&apos;item_left&apos;)
+      jsPlumb.draggable(&apos;item_right&apos;)
+    })
+  &lt;/script&gt;
+</code></pre><h2 class="mume-header" id="211-%E9%99%90%E5%88%B6%E8%8A%82%E7%82%B9%E6%8B%96%E5%8A%A8%E5%8C%BA%E5%9F%9F">2.11. 限制节点拖动区域</h2>
+
+<p>demo: <a href="https://wdd.js.org/jsplumb-chinese-tutorial/demos/11.html">https://wdd.js.org/jsplumb-chinese-tutorial/demos/11.html</a></p>
+<p>默认情况下，节点可以被拖动到区域外边，如果想只能在区域内拖动，需要设置containment，这样节点只能在固定区域内移动。</p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180227195859_fFawMs_Jietu20180227-195844.jpeg" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code> /* global jsPlumb, $ */
+    $(&apos;.item&apos;).resizable({
+      resize: function (event, ui) {
+        jsPlumb.repaint(ui.helper)
+      },
+      handles: &apos;all&apos;
+    })
+
+    jsPlumb.ready(function () {
+      jsPlumb.connect({
+        source: &apos;item_left&apos;,
+        target: &apos;item_right&apos;,
+        endpoint: &apos;Rectangle&apos;
+      })
+
+      jsPlumb.draggable(&apos;item_left&apos;, {containment: &apos;parent&apos;})
+      jsPlumb.draggable(&apos;item_right&apos;, {containment: &apos;parent&apos;})
+    })
+</code></pre><h2 class="mume-header" id="212-%E8%8A%82%E7%82%B9%E7%BD%91%E6%A0%BC%E5%AF%B9%E9%BD%90">2.12. 节点网格对齐</h2>
+
+<p>demo: <a href="https://wdd.js.org/jsplumb-chinese-tutorial/demos/12.html">https://wdd.js.org/jsplumb-chinese-tutorial/demos/12.html</a><br>
+网格对齐实际上是设置了<code>grid</code>属性，使移动只能按照固定的尺寸移动。然后用一张图作为背景铺开作为网格来实现的。</p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180227200100_wEX1FU_Jietu20180227-200047.jpeg" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>#diagramContainer {
+  padding: 20px;
+  width: 80%;
+  height: 400px;
+  border: 1px solid gray;
+  background-image: url(http://p3alsaatj.bkt.clouddn.com/20180227163310_1bVYeW_grid.jpeg);
+  background-repeat: repeat;
+}
+
+jsPlumb.draggable(&apos;item_left&apos;, {
+  containment: &apos;parent&apos;,
+  grid: [10, 10]
+})
+</code></pre><h2 class="mume-header" id="213-%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4%E8%BF%9E%E7%BA%BF">2.13. 点击删除连线</h2>
+
+<pre data-role="codeBlock" data-info="" class="language-"><code>// &#x5355;&#x70B9;&#x51FB;&#x4E86;&#x8FDE;&#x63A5;&#x7EBF;, 
+jsPlumb.bind(&apos;click&apos;, function (conn, originalEvent) {
+  if (confirm(&apos;&#x786E;&#x5B9A;&#x5220;&#x9664;&#x6240;&#x70B9;&#x51FB;&#x7684;&#x94FE;&#x63A5;&#x5417;&#xFF1F;&apos;)) {
+    jsPlumb.detach(conn)
+  }
+})
+</code></pre><h2 class="mume-header" id="214-%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E5%8C%85%E6%8B%AC%E8%8A%82%E7%82%B9%E7%9B%B8%E5%85%B3%E7%9A%84%E8%BF%9E%E6%8E%A5">2.14. 删除节点，包括节点相关的连接</h2>
+
+<pre data-role="codeBlock" data-info="" class="language-"><code>// nodeId&#x4E3A;&#x8282;&#x70B9;id, remove&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x8282;&#x70B9;&#x4EE5;&#x53CA;&#x548C;&#x8282;&#x70B9;&#x76F8;&#x5173;&#x7684;&#x8FDE;&#x7EBF;
+jsPlumb.remove(nodeId)
+</code></pre><p>注意remove方法有些情况下是无法删除干净连线的，<a href="https://jsplumbtoolkit.com/community/doc/removing.html">详情</a></p>
+<h2 class="mume-header" id="215-%E9%80%9A%E8%BF%87%E7%BC%96%E7%A0%81%E8%BF%9E%E6%8E%A5endpoint">2.15. 通过编码连接endPoint</h2>
+
+<p>初始化数据后，给节点加上了endPoint, 如果想编码让endPoint链接上。需要在addEndpoint时，就给该断点加上一个uuid, 然后通过connect()方法，将两个断点链接上。建议使用<a href="https://github.com/kelektiv/node-uuid">node-uuid</a>给每个断点都加上唯一的uuid， 这样以后链接就方便多了。</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>jsPlumb.addEndpoint(id, {
+    anchors: &apos;Top&apos;,
+    uuid: uuid() // &#x8FD9;&#x91CC;&#x9700;&#x8981;&#x552F;&#x4E00;&#x7684;&#x4E00;&#x4E2A;Id, 
+}, config)
+
+jsPlumb.connect({ uuids: [fromId, toId] })
+</code></pre><h1 class="mume-header" id="3-%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E4%B8%80%E4%B8%AA%E5%8F%AF%E8%A7%86%E5%8C%96ivr%E7%BC%96%E8%BE%91%E5%99%A8">3. 实战项目 一个可视化IVR编辑器</h1>
+
+<p>项目地址：<a href="https://github.com/wangduanduan/visual-ivr">https://github.com/wangduanduan/visual-ivr</a> 该项目还在开发完善中，不过已经具备基本功能。</p>
+<p><img src="http://p3alsaatj.bkt.clouddn.com/20180414105705_PbucQp_Jietu20180414-105646.jpeg" alt=""></p>
+<h1 class="mume-header" id="4-%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90">4. 参考资源</h1>
+
+<ul>
+<li><a href="https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html">jsPlumb Class</a></li>
+<li><a href="http://www.freedevelopertutorials.com/jsplumb-tutorial/">freedevelopertutorials jsplumb-tutorial</a></li>
+</ul>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#1-jsplumb-%E4%B8%AD%E6%96%87%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B">1. jsplumb 中文基础教程</a>
+<ul>
+<li><a href="#11-%E4%BB%80%E4%B9%88%E6%98%AFjsplumb">1.1. 什么是jsplumb？</a></li>
+<li><a href="#12-jsplumb%E8%83%BD%E5%B9%B2%E4%BB%80%E4%B9%88">1.2. jsplumb能干什么？</a></li>
+<li><a href="#13-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">1.3. 基本概念</a></li>
+</ul>
+</li>
+<li><a href="#2-%E5%9F%BA%E7%A1%80demos">2. 基础demos</a>
+<ul>
+<li><a href="#21-%E8%BF%9E%E6%8E%A5%E4%B8%A4%E4%B8%AA%E8%8A%82%E7%82%B9">2.1. 连接两个节点</a></li>
+<li><a href="#22-%E5%8F%AF%E6%8B%96%E5%8A%A8%E8%8A%82%E7%82%B9">2.2. 可拖动节点</a></li>
+<li><a href="#23-%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0">2.3. 连接的其他参数</a></li>
+<li><a href="#24-%E8%AE%BE%E7%BD%AE%E8%BF%9E%E6%8E%A5%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC">2.4. 设置连接的默认值</a></li>
+<li><a href="#25-%E7%BB%99%E8%BF%9E%E6%8E%A5%E5%8A%A0%E4%B8%8A%E6%A0%B7%E5%BC%8F">2.5. 给连接加上样式</a></li>
+<li><a href="#26-%E7%BB%99%E8%BF%9E%E6%8E%A5%E5%8A%A0%E4%B8%8A%E7%AE%AD%E5%A4%B4">2.6. 给连接加上箭头</a></li>
+<li><a href="#27-%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AA%E7%AB%AF%E7%82%B9">2.7. 增加一个端点</a></li>
+<li><a href="#28-%E6%8B%96%E5%8A%A8%E5%88%9B%E5%BB%BA%E8%BF%9E%E6%8E%A5">2.8. 拖动创建连接</a></li>
+<li><a href="#29-%E7%BB%99%E7%AB%AF%E7%82%B9%E5%A2%9E%E5%8A%A0%E6%A0%B7%E5%BC%8F">2.9. 给端点增加样式</a></li>
+<li><a href="#210-%E8%8A%82%E7%82%B9%E6%94%B9%E5%8F%98%E5%B0%BA%E5%AF%B8">2.10. 节点改变尺寸</a></li>
+<li><a href="#211-%E9%99%90%E5%88%B6%E8%8A%82%E7%82%B9%E6%8B%96%E5%8A%A8%E5%8C%BA%E5%9F%9F">2.11. 限制节点拖动区域</a></li>
+<li><a href="#212-%E8%8A%82%E7%82%B9%E7%BD%91%E6%A0%BC%E5%AF%B9%E9%BD%90">2.12. 节点网格对齐</a></li>
+<li><a href="#213-%E7%82%B9%E5%87%BB%E5%88%A0%E9%99%A4%E8%BF%9E%E7%BA%BF">2.13. 点击删除连线</a></li>
+<li><a href="#214-%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E5%8C%85%E6%8B%AC%E8%8A%82%E7%82%B9%E7%9B%B8%E5%85%B3%E7%9A%84%E8%BF%9E%E6%8E%A5">2.14. 删除节点，包括节点相关的连接</a></li>
+<li><a href="#215-%E9%80%9A%E8%BF%87%E7%BC%96%E7%A0%81%E8%BF%9E%E6%8E%A5endpoint">2.15. 通过编码连接endPoint</a></li>
+</ul>
+</li>
+<li><a href="#3-%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E4%B8%80%E4%B8%AA%E5%8F%AF%E8%A7%86%E5%8C%96ivr%E7%BC%96%E8%BE%91%E5%99%A8">3. 实战项目 一个可视化IVR编辑器</a></li>
+<li><a href="#4-%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90">4. 参考资源</a></li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    </body>
+    
+    
+    
+    
+    
+    
+    <script>
+(function bindTaskListEvent () {
+  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
+  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
+    var checkbox = taskListItemCheckboxes[i]
+    var li = checkbox.parentElement
+    if (li.tagName !== 'LI') li = li.parentElement
+    if (li.tagName === 'LI') {
+      li.classList.add('task-list-item')
+    }
+  }
+}())
+</script>
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function (event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  </html>
