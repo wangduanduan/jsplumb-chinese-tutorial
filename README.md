@@ -20,8 +20,9 @@
   - [2.13. 点击删除连线](#213-点击删除连线)
   - [2.14. 删除节点，包括节点相关的连接](#214-删除节点包括节点相关的连接)
   - [2.15. 通过编码连接endPoint](#215-通过编码连接endpoint)
-- [3. 实战项目 一个可视化IVR编辑器](#3-实战项目-一个可视化ivr编辑器)
-- [4. 参考资源](#4-参考资源)
+- [3. 有没有稍微复杂一点，带有拖放的栗子？](#3-有没有稍微复杂一点带有拖放的栗子)
+- [4. 实战项目 一个可视化IVR编辑器](#4-实战项目-一个可视化ivr编辑器)
+- [5. 参考资源](#5-参考资源)
 
 <!-- /TOC -->
 
@@ -375,24 +376,7 @@ demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/11.html
 ![](http://p3alsaatj.bkt.clouddn.com/20180227195859_fFawMs_Jietu20180227-195844.jpeg)
 
 ```
- /* global jsPlumb, $ */
-    $('.item').resizable({
-      resize: function (event, ui) {
-        jsPlumb.repaint(ui.helper)
-      },
-      handles: 'all'
-    })
-
-    jsPlumb.ready(function () {
-      jsPlumb.connect({
-        source: 'item_left',
-        target: 'item_right',
-        endpoint: 'Rectangle'
-      })
-
-      jsPlumb.draggable('item_left', {containment: 'parent'})
-      jsPlumb.draggable('item_right', {containment: 'parent'})
-    })
+jsPlumb.setContainer('area-id')
 ```
 
 ## 2.12. 节点网格对齐
@@ -451,12 +435,21 @@ jsPlumb.addEndpoint(id, {
 jsPlumb.connect({ uuids: [fromId, toId] })
 ```
 
-# 3. 实战项目 一个可视化IVR编辑器
+# 3. 有没有稍微复杂一点，带有拖放的栗子？
+项目地址：https://github.com/wangduanduan/visual-ivr ，将views目录下的drag-drop-demo.html拖放到浏览器中，就可以愉快的玩耍了。
+
+从该demo中除了可以学到基本的jsplumb的api, 也可以学到其他的关于拖放的知识点。其中目前只做了语音节点的拖放，其他的还时间做。该demo没有使用webpack打包，代码写的有点乱，大家凑合着看，有问题可以提issue, 或者评论。
+
+![](http://p3alsaatj.bkt.clouddn.com/20180425224658_pFg6BG_Jietu20180425-224640.jpeg)
+
+# 4. 实战项目 一个可视化IVR编辑器
 
 项目地址：https://github.com/wangduanduan/visual-ivr 该项目还在开发完善中，不过已经具备基本功能。
 
+该项目是用webpack打包的项目，所有文件都在src目录下。
+
 ![](http://p3alsaatj.bkt.clouddn.com/20180414105705_PbucQp_Jietu20180414-105646.jpeg)
 
-# 4. 参考资源
+# 5. 参考资源
 - [jsPlumb Class](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
 - [freedevelopertutorials jsplumb-tutorial](http://www.freedevelopertutorials.com/jsplumb-tutorial/)
