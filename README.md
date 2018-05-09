@@ -20,9 +20,11 @@
   - [2.13. 点击删除连线](#213-点击删除连线)
   - [2.14. 删除节点，包括节点相关的连接](#214-删除节点包括节点相关的连接)
   - [2.15. 通过编码连接endPoint](#215-通过编码连接endpoint)
-- [3. 有没有稍微复杂一点，带有拖放的栗子？](#3-有没有稍微复杂一点带有拖放的栗子)
-- [4. 实战项目 一个可视化IVR编辑器](#4-实战项目-一个可视化ivr编辑器)
-- [5. 参考资源](#5-参考资源)
+  - [2.16. 连接前的检查，判断是否建立连接](#216-连接前的检查判断是否建立连接)
+- [3. jsPlumb默认配置简介](#3-jsplumb默认配置简介)
+- [4. 有没有稍微复杂一点，带有拖放的栗子？](#4-有没有稍微复杂一点带有拖放的栗子)
+- [5. 实战项目 一个可视化IVR编辑器](#5-实战项目-一个可视化ivr编辑器)
+- [6. 参考资源](#6-参考资源)
 
 <!-- /TOC -->
 
@@ -435,14 +437,110 @@ jsPlumb.addEndpoint(id, {
 jsPlumb.connect({ uuids: [fromId, toId] })
 ```
 
-# 3. 有没有稍微复杂一点，带有拖放的栗子？
+## 2.16. 连接前的检查，判断是否建立连接
+
+有时候当用户从A端点链接到B端点时，需要做一些检查，如果不符合条件，就不让链接建立。
+
+```
+// 当链接建立
+jsPlumb.bind('beforeDrop', function (info) {
+
+  if(条件符合){
+    return true // 链接会自动建立
+  }
+  else{
+    return false // 链接不会建立，注意，必须是false
+  }
+})
+```
+
+# 3. jsPlumb默认配置简介
+
+参考地址: https://jsplumbtoolkit.com/community/doc/defaults.html
+
+jsPlumb的配置项有很多，如果你不主动去设置，那么jsPlumb就使用默认的配置。
+
+```
+Anchor : "BottomCenter",
+Anchors : [ null, null ],
+ConnectionsDetachable   : true,
+ConnectionOverlays  : [],
+Connector : "Bezier",
+Container : null,
+DoNotThrowErrors  : false,
+DragOptions : { },
+DropOptions : { },
+Endpoint : "Dot",
+Endpoints : [ null, null ],
+EndpointOverlays : [ ],
+EndpointStyle : { fill : "#456" },
+EndpointStyles : [ null, null ],
+EndpointHoverStyle : null,
+EndpointHoverStyles : [ null, null ],
+HoverPaintStyle : null,
+LabelStyle : { color : "black" },
+LogEnabled : false,
+Overlays : [ ],
+MaxConnections : 1,
+PaintStyle : { strokeWidth : 8, stroke : "#456" },
+ReattachConnections : false,
+RenderMode : "svg",
+Scope : "jsPlumb_DefaultScope"
+```
+
+你也可以从`jsPlumb.Defaults`对象中查看默认的配置。如果你想要更加个性化的设置连线，那么最好可以了解一下，它的默认设置有哪些，从而方便的来完成自己的设计需求。
+
+![](http://p3alsaatj.bkt.clouddn.com/20180509225507_aRk1UV_Jietu20180509-225433.jpeg)
+
+默认参数的简介:
+
+- `Anchor` 锚点，即端点链接的位置
+- `Anchors` 多个锚点 [源锚点，目标锚点].
+- `Connector` 链接
+- `ConnectionsDetachable` 节点是否可以用鼠标拖动使其断开，默认为true。即用鼠标链接上的连线，也可以使用鼠标拖动让其断开。设置成false，可以让其拖动也不会自动断开。
+- `Container` 连线的容器
+- `DoNotThrowErrors` 是否抛出错误
+- `ConnectionOverlays` 链接遮罩层
+- `DragOptions` 拖动设置
+- `DropOptions` 拖放设置
+- `Endpoint` 端点
+- `Endpoints` 数组形式的，[源端点，目标端点] 
+- `EndpointOverlays` 端点遮罩层
+- `EndpointStyle` 端点样式
+- `EndpointStyles` [源端点样式，目标端点样式]
+- `EndpointHoverStyle` 端点鼠标经过的样式
+- `EndpointHoverStyles` [源端点鼠标经过样式，目标端点鼠标经过样式]
+- `HoverPaintStyle` 鼠标经过链接线时的样式
+- `LabelStyle` 标签样式
+- `LogEnabled` 是否启用日志
+- `Overlays` 连接线和端点的遮罩层样式
+- `MaxConnections` 端点最大连接线数量默认为1， 设置成-1可以表示无数个链接
+- `PaintStyle` 连线样式
+- `ReattachConnections` 端点是否可以再次重新链接
+- `RenderMode` 渲染模式，默认是svg
+- `Scope` 作用域，用来区分哪些端点可以链接，作用域相同的可以链接
+
+```
+// 可以使用importDefaults，来重写某些默认设置
+jsPlumb.importDefaults({
+  PaintStyle : {
+    strokeWidth:13,
+    stroke: 'rgba(200,0,0,0.5)'
+  },
+  DragOptions : { cursor: "crosshair" },
+  Endpoints : [ [ "Dot", { radius:7 } ], [ "Dot", { radius:11 } ] ],
+  EndpointStyles : [{ fill:"#225588" }, { fill:"#558822" }]
+});
+```
+
+# 4. 有没有稍微复杂一点，带有拖放的栗子？
 项目地址：https://github.com/wangduanduan/visual-ivr ，将views目录下的drag-drop-demo.html拖放到浏览器中，就可以愉快的玩耍了。
 
 从该demo中除了可以学到基本的jsplumb的api, 也可以学到其他的关于拖放的知识点。其中目前只做了语音节点的拖放，其他的还时间做。该demo没有使用webpack打包，代码写的有点乱，大家凑合着看，有问题可以提issue, 或者评论。
 
 ![](http://p3alsaatj.bkt.clouddn.com/20180425224658_pFg6BG_Jietu20180425-224640.jpeg)
 
-# 4. 实战项目 一个可视化IVR编辑器
+# 5. 实战项目 一个可视化IVR编辑器
 
 项目地址：https://github.com/wangduanduan/visual-ivr 该项目还在开发完善中，不过已经具备基本功能。
 
@@ -450,6 +548,6 @@ jsPlumb.connect({ uuids: [fromId, toId] })
 
 ![](http://p3alsaatj.bkt.clouddn.com/20180414105705_PbucQp_Jietu20180414-105646.jpeg)
 
-# 5. 参考资源
+# 6. 参考资源
 - [jsPlumb Class](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
 - [freedevelopertutorials jsplumb-tutorial](http://www.freedevelopertutorials.com/jsplumb-tutorial/)
