@@ -24,7 +24,11 @@
 - [3. jsPlumb默认配置简介](#3-jsplumb默认配置简介)
 - [4. 有没有稍微复杂一点，带有拖放的栗子？](#4-有没有稍微复杂一点带有拖放的栗子)
 - [5. 实战项目 一个可视化IVR编辑器](#5-实战项目-一个可视化ivr编辑器)
-- [6. 参考资源](#6-参考资源)
+- [6. 还有哪些类似的图形连线可视化项目](#6-还有哪些类似的图形连线可视化项目)
+  - [6.1. G6 AntV](#61-g6-antv)
+  - [6.2. VivaGraphJS](#62-vivagraphjs)
+  - [6.3. springy](#63-springy)
+- [7. 参考资源](#7-参考资源)
 
 <!-- /TOC -->
 
@@ -548,6 +552,27 @@ jsPlumb.importDefaults({
 
 ![](http://p3alsaatj.bkt.clouddn.com/20180414105705_PbucQp_Jietu20180414-105646.jpeg)
 
-# 6. 参考资源
+# 6. 还有哪些类似的图形连线可视化项目
+
+## 6.1. G6 AntV 
+
+https://github.com/antvis/g6
+
+![](http://p3alsaatj.bkt.clouddn.com/20180611171335_XWq41h_Jietu20180611-171327.jpeg)
+
+## 6.2. VivaGraphJS 
+
+https://github.com/anvaka/VivaGraphJS
+
+![](http://p3alsaatj.bkt.clouddn.com/20180611171125_1LBQdG_Jietu20180611-171117.jpeg)
+
+## 6.3. springy 
+
+https://github.com/dhotson/springy
+
+![](http://p3alsaatj.bkt.clouddn.com/20180611171213_XS3vL4_Jietu20180611-171206.jpeg)
+
+
+# 7. 参考资源
 - [jsPlumb Class](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
 - [freedevelopertutorials jsplumb-tutorial](http://www.freedevelopertutorials.com/jsplumb-tutorial/)
