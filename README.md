@@ -28,6 +28,7 @@
   - [6.1. G6 AntV](#61-g6-antv)
   - [6.2. VivaGraphJS](#62-vivagraphjs)
   - [6.3. springy](#63-springy)
+  - [6.4 graphviz](#64-graphviz)
 - [7. 参考资源](#7-参考资源)
 
 <!-- /TOC -->
@@ -573,6 +574,33 @@ https://github.com/anvaka/VivaGraphJS
 https://github.com/dhotson/springy
 
 ![](http://p3alsaatj.bkt.clouddn.com/20180611171213_XS3vL4_Jietu20180611-171206.jpeg)
+
+## 6.4 graphviz
+
+https://www.graphviz.org/about/
+
+中文有个基本的介绍文档写的不错，参考：https://casatwy.com/shi-yong-dotyu-yan-he-graphvizhui-tu-fan-yi.html
+
+graphviz可以把你写的.dot文件渲染成一张图。
+
+mac上首先要安装：`brew install graphviz`
+
+然后如果你用vscode的话，vscode上又graphviz的扩展插件，可以预览你的dot文件。
+
+总体来说，graphviz的功能十分强大，同时它也提供了其他语言的脚本api来方便绘图。总之，如果你不想通过拖拉拽来绘制一些流程图，又对图形布局不是很感兴趣的话，`graphviz是一个免费而且效率高而且能装逼的工具`
+
+![](http://p3alsaatj.bkt.clouddn.com/20180626102133_EAJjjY_Jietu20180626-102115.jpeg)
+
+再贴几张graphviz的绘图
+
+![](http://p3alsaatj.bkt.clouddn.com/20180626102608_hCABQQ_summary.jpeg)
+
+![](http://p3alsaatj.bkt.clouddn.com/20180626102646_RPHmnl_example5.jpeg)
+
+![](http://p3alsaatj.bkt.clouddn.com/20180626102701_S66sli_petrol.jpeg)
+
+![](http://p3alsaatj.bkt.clouddn.com/20180626102715_wPb7pW_dfd2.jpeg)
+
 
 
 # 7. 参考资源
