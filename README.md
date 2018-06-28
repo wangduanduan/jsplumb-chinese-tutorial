@@ -551,7 +551,15 @@ jsPlumb.importDefaults({
 
 该项目是用webpack打包的项目，所有文件都在src目录下。
 
+图1是基于jsplumb做的最基础的版本，图2是最近优化后的版本，该版本未开源。
+
 ![](http://p3alsaatj.bkt.clouddn.com/20180414105705_PbucQp_Jietu20180414-105646.jpeg)
+
+【图1】
+
+
+![](http://p3alsaatj.bkt.clouddn.com/20180628154158_hryb52_Jietu20180628-153918.jpeg)
+【图2】
 
 # 6. 还有哪些类似的图形连线可视化项目
 
