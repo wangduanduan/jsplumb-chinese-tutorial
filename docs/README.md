@@ -372,51 +372,102 @@ jsPlumb.draggable('item_left', {
 })
 ```
 
-## 2.13. 点击删除连线
+## 2.13. 给链接添加点击事件：点击删除连线
+
+demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/13.html
+
+![](http://p3alsaatj.bkt.clouddn.com/20180713130405_UnzvUT_Jietu20180713-130335.jpeg)
 
 ```
-// 单点击了连接线, 
+// 请单点击一下连接线, 
 jsPlumb.bind('click', function (conn, originalEvent) {
-  if (confirm('确定删除所点击的链接吗？')) {
+  if (window.prompt('确定删除所点击的链接吗？ 输入1确定') === '1') {
     jsPlumb.detach(conn)
   }
 })
 ```
 
+jsPlumb支持许多事件
+
+`jsPlumb Events列表`
+
+- connection
+- connectionDetached
+- connectionMoved
+- click
+- dblclick
+- endpointClick
+- endpointDblClick
+- contextmenu
+- beforeDrop
+- beforeDetach
+- zoom
+- Connection Events
+- Endpoint Events
+- Overlay Events
+- Unbinding Events
+
+参考用法参考：https://jsplumbtoolkit.com/community/doc/events.html#jsPlumbEvents
+
 ## 2.14. 删除节点，包括节点相关的连接
+
+demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/14.html
+
+![](http://p3alsaatj.bkt.clouddn.com/20180713131254_dLSYLW_Jietu20180713-131238.jpeg)
 
 ```
 // nodeId为节点id, remove方法可以删除节点以及和节点相关的连线
-jsPlumb.remove(nodeId)
+console.log('3 秒后移除左边节点包括它的连线')
+setTimeout(function () {
+  jsPlumb.remove('item_left')
+}, 3000)
 ```
 
 注意remove方法有些情况下是无法删除干净连线的，[详情](https://jsplumbtoolkit.com/community/doc/removing.html)
 
 ## 2.15. 通过编码连接endPoint
 
+demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/15.html
+
+![](http://p3alsaatj.bkt.clouddn.com/20180713132452_xkiWxs_Jietu20180713-132430.jpeg)
+
 初始化数据后，给节点加上了endPoint, 如果想编码让endPoint链接上。需要在addEndpoint时，就给该断点加上一个uuid, 然后通过connect()方法，将两个断点链接上。建议使用[node-uuid](https://github.com/kelektiv/node-uuid)给每个断点都加上唯一的uuid， 这样以后链接就方便多了。
 
 ```
-jsPlumb.addEndpoint(id, {
-    anchors: 'Top',
-    uuid: uuid() // 这里需要唯一的一个Id, 
-}, config)
+jsPlumb.addEndpoint('item_left', {
+  anchors: ['Right'],
+  uuid: 'fromId'
+})
 
-jsPlumb.connect({ uuids: [fromId, toId] })
+jsPlumb.addEndpoint('item_right', {
+  anchors: ['Left'],
+  uuid: 'toId'
+})
+
+console.log('3 秒后建立连线')
+setTimeout(function () {
+  jsPlumb.connect({ uuids: ['fromId', 'toId'] })
+}, 3000)
 ```
 
 ## 2.16. 连接前的检查，判断是否建立连接
 
+demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/16.html
+
+![](http://p3alsaatj.bkt.clouddn.com/20180713133303_xif4MK_Screenshot.jpeg)
+
 有时候当用户从A端点链接到B端点时，需要做一些检查，如果不符合条件，就不让链接建立。
 
 ```
-// 当链接建立
+// 当链接建立前
 jsPlumb.bind('beforeDrop', function (info) {
-
-  if(条件符合){
+  var a = 10
+  var b = 2
+  if (a < b) {
+    console.log('链接会自动建立')
     return true // 链接会自动建立
-  }
-  else{
+  } else {
+    console.log('链接取消')
     return false // 链接不会建立，注意，必须是false
   }
 })

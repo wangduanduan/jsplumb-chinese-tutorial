@@ -26,9 +26,10 @@
 
 <body>
   <div id="diagramContainer">
-    <div id="item_left" class="item"></div>
-    <div id="item_right" class="item" style="left:150px;"></div>
+    <div id="item_left"  class="item"></div>
+    <div id="item_right" style="left:400px" class="item" style="left:150px;"></div>
   </div>
+
   <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="./lib/jquery.jsplumb.js"></script>
@@ -38,18 +39,26 @@
     $('.item').resizable({
       resize: function (event, ui) {
         jsPlumb.repaint(ui.helper)
-      }
+      },
+      handles: 'all'
     })
 
     jsPlumb.ready(function () {
-      jsPlumb.connect({
-        source: 'item_left',
-        target: 'item_right',
-        endpoint: 'Rectangle'
+
+      jsPlumb.addEndpoint('item_left', {
+        anchors: ['Right'],
+        uuid: 'fromId'
       })
 
-      jsPlumb.draggable('item_left')
-      jsPlumb.draggable('item_right')
+      jsPlumb.addEndpoint('item_right', {
+        anchors: ['Left'],
+        uuid: 'toId'
+      })
+
+      console.log('3 秒后建立连线')
+      setTimeout(function () {
+        jsPlumb.connect({ uuids: ['fromId', 'toId'] })
+      }, 3000)
     })
   </script>
 </body>

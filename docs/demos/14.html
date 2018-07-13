@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
   <style>
     #diagramContainer {
       padding: 20px;
@@ -28,27 +29,31 @@
     <div id="item_left" class="item"></div>
     <div id="item_right" class="item" style="left:150px;"></div>
   </div>
-  <script src="https://cdn.bootcss.com/jsPlumb/2.6.8/js/jsplumb.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="./lib/jquery.jsplumb.js"></script>
 
   <script>
-    /* global jsPlumb */
-    jsPlumb.ready(function () {
-      var common = {
-        endpoint: 'Rectangle',
-        connector: ['Bezier'],
-        anchor: ['Left', 'Right']
-      }
+    /* global jsPlumb, $ */
+    $('.item').resizable({
+      resize: function (event, ui) {
+        jsPlumb.repaint(ui.helper)
+      },
+      handles: 'all'
+    })
 
+    jsPlumb.ready(function () {
       jsPlumb.connect({
         source: 'item_left',
         target: 'item_right',
-        paintStyle: { stroke: 'lightgray', strokeWidth: 3 },
-        endpointStyle: { fill: 'lightgray', outlineStroke: 'darkgray', outlineWidth: 2 },
-        overlays: [ ['Arrow', { width: 12, length: 12, location: 0.5 }] ]
-      }, common)
-
-      jsPlumb.draggable('item_left')
-      jsPlumb.draggable('item_right')
+        endpoint: 'Rectangle'
+      })
+      
+      console.log('3 秒后移除左边节点包括它的连线')
+      setTimeout(function () {
+        jsPlumb.remove('item_left')
+      }, 3000)
     })
   </script>
 </body>

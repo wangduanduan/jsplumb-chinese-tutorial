@@ -10,15 +10,15 @@
     #diagramContainer {
       padding: 20px;
       width: 80%;
-      height: 400px;
+      height: 200px;
       border: 1px solid gray;
     }
 
     .item {
-      position: absolute;
       height: 80px;
       width: 80px;
       border: 1px solid blue;
+      float: left;
     }
   </style>
 </head>
@@ -26,26 +26,40 @@
 <body>
   <div id="diagramContainer">
     <div id="item_left" class="item"></div>
-    <div id="item_right" class="item" style="left:150px;"></div>
+    <div id="item_right" class="item" style="margin-left:50px;"></div>
   </div>
   <script src="https://cdn.bootcss.com/jsPlumb/2.6.8/js/jsplumb.min.js"></script>
 
   <script>
     /* global jsPlumb */
     jsPlumb.ready(function () {
+      jsPlumb.setContainer('diagramContainer')
+
       var common = {
-        endpoint: 'Rectangle',
-        connector: ['Bezier'],
-        anchor: ['Left', 'Right']
+        isSource: true,
+        isTarget: true,
+        connector: ['Straight']
       }
 
-      jsPlumb.connect({
-        source: 'item_left',
-        target: 'item_right'
+      jsPlumb.addEndpoint('item_left', {
+        anchors: ['Right']
       }, common)
 
-      jsPlumb.draggable('item_left')
-      jsPlumb.draggable('item_right')
+      jsPlumb.addEndpoint('item_right', {
+        anchor: 'Left'
+      }, common)
+
+      jsPlumb.bind('beforeDrop', function (info) {
+        var a = 10
+        var b = 2
+        if (a < b) {
+          console.log('链接会自动建立')
+          return true // 链接会自动建立
+        } else {
+          console.log('链接取消')
+          return false // 链接不会建立，注意，必须是false
+        }
+      })
     })
   </script>
 </body>
