@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+  <style>
+    #diagramContainer {
+      padding: 20px;
+      width: 80%;
+      height: 400px;
+      border: 1px solid gray;
+    }
+
+    .item {
+      position: absolute;
+      height: 80px;
+      width: 80px;
+      border: 1px solid blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="diagramContainer">
+    <div id="item_left" class="item"></div>
+    <div id="item_right" class="item" style="left:150px;"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="./lib/jquery.jsplumb.js"></script>
+
+  <script>
+    /* global jsPlumb, $ */
+    $('.item').resizable({
+      resize: function (event, ui) {
+        jsPlumb.repaint(ui.helper)
+      },
+      handles: 'all'
+    })
+
+    jsPlumb.ready(function () {
+      jsPlumb.connect({
+        source: 'item_left',
+        target: 'item_right',
+        endpoint: 'Rectangle'
+      })
+
+      jsPlumb.draggable('item_left', {containment: 'parent'})
+      jsPlumb.draggable('item_right', {containment: 'parent'})
+    })
+  </script>
+</body>
+
+</html>
