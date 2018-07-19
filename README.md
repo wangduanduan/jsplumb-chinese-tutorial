@@ -1,6 +1,9 @@
 [查看在线文档](https://wdd.js.org/jsplumb-chinese-tutorial/#/)
 
 
+有问题的话，可以提出Issue，我会尽快回复的。
+
+
 # 目录简介
 
 - 1. jsplumb 中文基础教程
