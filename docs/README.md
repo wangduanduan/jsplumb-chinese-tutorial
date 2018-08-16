@@ -625,6 +625,16 @@ mac上首先要安装：`brew install graphviz`
 ![](http://p3alsaatj.bkt.clouddn.com/20180626102715_wPb7pW_dfd2.jpeg)
 
 
+## 6.5 visjs
+
+http://visjs.org/index.html
+
+该项目看起来不错，github上将近有7000 star, 但是它的开发者似乎没时间维护该项目了，正在给该项目找下家。
+
+![](http://p3alsaatj.bkt.clouddn.com/20180816163348_S3yJbT_Jietu20180816-163228.jpeg)
+
+
+
 
 # 7. 参考资源
 - [jsPlumb Class](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
