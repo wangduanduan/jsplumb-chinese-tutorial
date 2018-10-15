@@ -1,6 +1,6 @@
 # 1. jsplumb 中文基础教程
 
-仓库地址：https://github.com/wangduanduan/jsplumb-chinese-tutorial.git
+后续更新会在仓库：https://github.com/wangduanduan/jsplumb-chinese-tutorial.git
 
 ## 1.1. 什么是jsplumb？
 你有没有想过在你的网站上展示图表或者甚至在浏览器应用程序中使用它？用jsPlumb你可以！它是完全免费的，并根据MIT许可证提供。您可以直接从jsPlumb github网站下载框架。
@@ -640,3 +640,13 @@ http://visjs.org/index.html
 # 7. 参考资源
 - [jsPlumb Class](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
 - [freedevelopertutorials jsplumb-tutorial](http://www.freedevelopertutorials.com/jsplumb-tutorial/)
+
+
+# FAQ
+
+由于我自己的疏忽，关于jsPlumb默认配置简介的讲解那一块，属性名是直接复制的，实际上哪些属性名都应该`小写字母开头`。比如：`maxConnections`, 有人问：设置maxConnections貌似没用呢，可能就是maxConnections首字母大写了。
+
+参见demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/17.html   demo上需要你自己手动拖动创建链接。
+
+![](http://p3alsaatj.bkt.clouddn.com/20181015195143_kNd9Sd_Jietu20181015-194116.jpeg)
+
