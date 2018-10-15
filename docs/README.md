@@ -2,6 +2,8 @@
 
 后续更新会在仓库：https://github.com/wangduanduan/jsplumb-chinese-tutorial.git
 
+本文的图片是托管于七牛云的，由于使用的是测试域名，可能不知道哪天，图片就无法显示了。不过每个例子都有简单的在线demo, demo剩千图，还是能看懂的。
+
 ## 1.1. 什么是jsplumb？
 你有没有想过在你的网站上展示图表或者甚至在浏览器应用程序中使用它？用jsPlumb你可以！它是完全免费的，并根据MIT许可证提供。您可以直接从jsPlumb github网站下载框架。
 
