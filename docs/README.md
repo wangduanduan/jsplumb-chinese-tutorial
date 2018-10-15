@@ -483,6 +483,27 @@ jsPlumb.bind('beforeDrop', function (info) {
 
 jsPlumb的配置项有很多，如果你不主动去设置，那么jsPlumb就使用默认的配置。
 
+另外建议你不要修改默认的配置，而是使用自定义的方式。
+
+另外一点要注意，如果你想修改默认配置，那么使用importDefaults方法，并且属性的首字母要大写。如果你用addEndpoint, 并使用类似maxConnections的属性，那么首字母要小写。
+
+参见demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/17.html   demo上需要你自己手动拖动创建链接。
+
+![](http://p3alsaatj.bkt.clouddn.com/20181015195143_kNd9Sd_Jietu20181015-194116.jpeg)
+
+```
+var common = {
+  isSource: true,
+  isTarget: true,
+  connector: ['Straight'],
+  maxConnections: -1
+}
+
+jsPlumb.addEndpoint('item_left', {
+  anchors: ['Right']
+}, common)
+```
+
 ```
 Anchor : "BottomCenter",
 Anchors : [ null, null ],
@@ -515,33 +536,36 @@ Scope : "jsPlumb_DefaultScope"
 
 ![](http://p3alsaatj.bkt.clouddn.com/20180509225507_aRk1UV_Jietu20180509-225433.jpeg)
 
+
+
 默认参数的简介:
 
-- `anchor` 锚点，即端点链接的位置
-- `anchors` 多个锚点 [源锚点，目标锚点].
-- `connector` 链接
-- `connectionsDetachable` 节点是否可以用鼠标拖动使其断开，默认为true。即用鼠标链接上的连线，也可以使用鼠标拖动让其断开。设置成false，可以让其拖动也不会自动断开。
-- `container` 连线的容器
-- `doNotThrowErrors` 是否抛出错误
-- `connectionOverlays` 链接遮罩层
-- `dragOptions` 拖动设置
-- `dropOptions` 拖放设置
-- `endpoint` 端点
-- `endpoints` 数组形式的，[源端点，目标端点] 
-- `endpointOverlays` 端点遮罩层
-- `endpointStyle` 端点样式
-- `endpointStyles` [源端点样式，目标端点样式]
-- `endpointHoverStyle` 端点鼠标经过的样式
-- `endpointHoverStyles` [源端点鼠标经过样式，目标端点鼠标经过样式]
-- `hoverPaintStyle` 鼠标经过链接线时的样式
-- `labelStyle` 标签样式
-- `logEnabled` 是否启用日志
-- `overlays` 连接线和端点的遮罩层样式
-- `maxConnections` 端点最大连接线数量默认为1， 设置成-1可以表示无数个链接
-- `paintStyle` 连线样式
-- `reattachConnections` 端点是否可以再次重新链接
-- `renderMode` 渲染模式，默认是svg
-- `scope` 作用域，用来区分哪些端点可以链接，作用域相同的可以链接
+- `Anchor` 锚点，即端点链接的位置
+- `Anchors` 多个锚点 [源锚点，目标锚点].
+- `Connector` 链接
+- `ConnectionsDetachable` 节点是否可以用鼠标拖动使其断开，默认为true。即用鼠标链接上的连线，也可以使用鼠标拖动让其断开。设置成false，可以让其拖动也不会自动断开。
+- `Container` 连线的容器
+- `DoNotThrowErrors` 是否抛出错误
+- `ConnectionOverlays` 链接遮罩层
+- `DragOptions` 拖动设置
+- `DropOptions` 拖放设置
+- `Endpoint` 端点
+- `Endpoints` 数组形式的，[源端点，目标端点] 
+- `EndpointOverlays` 端点遮罩层
+- `EndpointStyle` 端点样式
+- `EndpointStyles` [源端点样式，目标端点样式]
+- `EndpointHoverStyle` 端点鼠标经过的样式
+- `EndpointHoverStyles` [源端点鼠标经过样式，目标端点鼠标经过样式]
+- `HoverPaintStyle` 鼠标经过链接线时的样式
+- `LabelStyle` 标签样式
+- `LogEnabled` 是否启用日志
+- `Overlays` 连接线和端点的遮罩层样式
+- `MaxConnections` 端点最大连接线数量默认为1， 设置成-1可以表示无数个链接
+- `PaintStyle` 连线样式
+- `ReattachConnections` 端点是否可以再次重新链接
+- `RenderMode` 渲染模式，默认是svg
+- `Scope` 作用域，用来区分哪些端点可以链接，作用域相同的可以链接
+
 
 ```
 // 可以使用importDefaults，来重写某些默认设置
@@ -642,13 +666,3 @@ http://visjs.org/index.html
 # 7. 参考资源
 - [jsPlumb Class](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
 - [freedevelopertutorials jsplumb-tutorial](http://www.freedevelopertutorials.com/jsplumb-tutorial/)
-
-
-# FAQ
-
-由于我自己的疏忽，关于jsPlumb默认配置简介的讲解那一块，属性名是直接复制的，实际上哪些属性名都应该`小写字母开头`。比如：`maxConnections`, 有人问：设置maxConnections貌似没用呢，可能就是maxConnections首字母大写了。
-
-参见demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/17.html   demo上需要你自己手动拖动创建链接。
-
-![](http://p3alsaatj.bkt.clouddn.com/20181015195143_kNd9Sd_Jietu20181015-194116.jpeg)
-
