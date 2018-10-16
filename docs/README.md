@@ -477,6 +477,28 @@ jsPlumb.bind('beforeDrop', function (info) {
 })
 ```
 
+## 2.17. 一个端点如何拖拽出多条连线
+
+默认情况下，`maxConnections`的值是1，也就是一个端点最多只能拉出一条连线。
+
+你也可以设置成其他值，例如5，表示最多可以有5条连线。
+
+如果你想不限制连线的数量，那么可以将该值设置为`-1`
+
+```
+var common = {
+  isSource: true,
+  isTarget: true,
+  connector: ['Straight'],
+  maxConnections: -1
+}
+
+jsPlumb.addEndpoint('item_left', {
+  anchors: ['Right']
+}, common)
+```
+
+
 # 3. jsPlumb默认配置简介
 
 参考地址: https://jsplumbtoolkit.com/community/doc/defaults.html
