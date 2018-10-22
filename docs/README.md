@@ -109,6 +109,13 @@ demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/03.html
 
 可以通过connector去设置链接线的形状，如直线或者曲线之类的。anchor可以去设置锚点的位置。
 
+jsplumb连线的样式有四种
+
+- `Bezier`: 贝塞尔曲线
+- `Flowchart`: 具有90度转折点的流程线
+- `StateMachine`: 状态机
+- `Straight`: 直线
+
 ![](http://p3alsaatj.bkt.clouddn.com/20180227192135_1AWJH6_Jietu20180227-192120.jpeg)
 
 ```
@@ -184,6 +191,16 @@ jsPlumb.connect({
 demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/06.html
 
 箭头实际上是通过设置`overlays`去设置的，可以设置箭头的长宽以及箭头的位置，location 0.5表示箭头位于中间，location 1表示箭头设置在连线末端。 一根连线是可以添加多个箭头的。
+
+`overlays`也是一个比较重要的概念，overlays可以理解为遮罩层。遮罩层不仅仅可以设置箭头，也可以设置其他内容。
+
+overlays有五种类型，下面给出简介。具体使用方法参见 https://jsplumbtoolkit.com/community/doc/overlays.html 
+
+- `Arrow` 一个可配置的箭头
+- `Label` 标签，可以在链接上显示文字信息
+- `PlainArrow` 原始类型的箭头
+- `Diamond` 菱形箭头
+- `Custom` 自定义类型
 
 ![](http://p3alsaatj.bkt.clouddn.com/20180227193801_OejsPz_Jietu20180227-193752.jpeg)
 
@@ -609,6 +626,7 @@ jsPlumb.importDefaults({
 
 ![](http://p3alsaatj.bkt.clouddn.com/20180425224658_pFg6BG_Jietu20180425-224640.jpeg)
 
+
 # 5. 实战项目 一个可视化IVR编辑器
 
 项目地址：https://github.com/wangduanduan/visual-ivr 该项目还在开发完善中，不过已经具备基本功能。
@@ -647,7 +665,7 @@ https://github.com/dhotson/springy
 
 ![](http://p3alsaatj.bkt.clouddn.com/20180611171213_XS3vL4_Jietu20180611-171206.jpeg)
 
-## 6.4 graphviz
+## 6.4. graphviz
 
 https://www.graphviz.org/about/
 
@@ -674,7 +692,7 @@ mac上首先要安装：`brew install graphviz`
 ![](http://p3alsaatj.bkt.clouddn.com/20180626102715_wPb7pW_dfd2.jpeg)
 
 
-## 6.5 visjs
+## 6.5. visjs
 
 http://visjs.org/index.html
 
@@ -685,6 +703,9 @@ http://visjs.org/index.html
 
 
 
+
 # 7. 参考资源
 - [jsPlumb Class](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
 - [freedevelopertutorials jsplumb-tutorial](http://www.freedevelopertutorials.com/jsplumb-tutorial/)
+
+
