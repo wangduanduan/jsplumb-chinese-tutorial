@@ -31,7 +31,7 @@
 
 ## 2.1. 连接两个节点
 
-demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/01.html
+[demo-1](./demos/01.html)
 
 jsPlumb.ready方法和jquery的ready方法差不多的功能，jsPlumb.connect用于建立连线
 
@@ -514,6 +514,82 @@ jsPlumb.addEndpoint('item_left', {
 }, common)
 ```
 
+## 2.18. 整个节点作为source或者target
+
+[demo-18](./demos/18.html)
+
+整个节点作为source或者target， 并且将锚点设置成Continuous，那么锚点就会随着节点的位置改变而改变自己的位置。
+
+jsPlumb的锚点分为四类
+
+- `Static` 静态 固定位置的锚点
+- `Dynamic` jsPlumb自动选择合适的锚点，动态锚点
+- `Perimeter` 边缘锚点，会根据节点形状去改变位置
+- `Continuous` 根据节点位置，自动调整位置的锚点
+
+详情：https://jsplumbtoolkit.com/community/doc/anchors.html
+
+```
+    window.jsPlumb.ready(function () {
+      var jsPlumb = window.jsPlumb
+
+      jsPlumb.makeSource('A', {
+        endpoint:"Dot",
+        anchor: "Continuous"
+      })
+
+      jsPlumb.makeTarget('B', {
+        endpoint:"Dot",
+        anchor: "Continuous"
+      })
+
+      jsPlumb.draggable('A')
+      jsPlumb.draggable('B')
+    })
+```
+
+![](http://p3alsaatj.bkt.clouddn.com/20181023204322_QVz4Cm_Jietu20181023-204022.jpeg)
+
+![](http://p3alsaatj.bkt.clouddn.com/20181023204336_p2KxaX_Jietu20181023-204054.jpeg)
+
+## 2.19. 节点缩放
+
+[demo-19](./demo/19.html)
+
+```
+ window.jsPlumb.ready(function () {
+      var jsPlumb = window.jsPlumb
+      jsPlumb.setContainer("diagramContainer")
+
+      jsPlumb.connect({
+        source: 'A',
+        target: 'B',
+        endpoint: 'Dot'
+      })
+      
+      var baseZoom = 1
+      setInterval(() => {
+        baseZoom -= 0.1
+        if (baseZoom < 0.5) {
+          baseZoom = 1
+        }
+        zoom(baseZoom)
+      }, 1000)
+    })
+
+    function zoom (scale) {
+      $("#diagramContainer").css({
+          "-webkit-transform": `scale(${scale})`,
+          "-moz-transform": `scale(${scale})`,
+          "-ms-transform": `scale(${scale})`,
+          "-o-transform": `scale(${scale})`,
+          "transform": `scale(${scale})`
+      })
+      jsPlumb.setZoom(0.75);
+    }
+```
+
+![](http://p3alsaatj.bkt.clouddn.com/20181023210318_r0MaTA_Jietu20181023-210309.jpeg)
 
 # 3. jsPlumb默认配置简介
 

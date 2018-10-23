@@ -32,24 +32,39 @@
   <script src="./lib/jquery.js"></script>
   <script src="./lib/jquery-ui.js"></script>
   <script src="./lib/jquery.jsplumb.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jsplumb@2.8.0/dist/js/jsplumb.min.js"></script> -->
 
   <script>
     window.jsPlumb.ready(function () {
       var jsPlumb = window.jsPlumb
+      jsPlumb.setContainer("diagramContainer")
 
-      jsPlumb.makeSource('A', {
-        endpoint:"Dot",
-        anchor: "Continuous"
+      jsPlumb.connect({
+        source: 'A',
+        target: 'B',
+        endpoint: 'Dot'
       })
-
-      jsPlumb.makeTarget('B', {
-        endpoint:"Dot",
-        anchor: "Continuous"
-      })
-
-      jsPlumb.draggable('A')
-      jsPlumb.draggable('B')
+      
+      var baseZoom = 1
+      setInterval(() => {
+        baseZoom -= 0.1
+        if (baseZoom < 0.5) {
+          baseZoom = 1
+        }
+        zoom(baseZoom)
+      }, 1000)
     })
+
+    function zoom (scale) {
+      $("#diagramContainer").css({
+          "-webkit-transform": `scale(${scale})`,
+          "-moz-transform": `scale(${scale})`,
+          "-ms-transform": `scale(${scale})`,
+          "-o-transform": `scale(${scale})`,
+          "transform": `scale(${scale})`
+      })
+      jsPlumb.setZoom(0.75);
+    }
   </script>
 </body>
 
