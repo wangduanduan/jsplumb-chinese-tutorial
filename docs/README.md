@@ -516,7 +516,7 @@ jsPlumb.addEndpoint('item_left', {
 
 ## 2.18. 整个节点作为source或者target
 
-[demo-18](./demos/18.html)
+demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/18.html
 
 整个节点作为source或者target， 并且将锚点设置成Continuous，那么锚点就会随着节点的位置改变而改变自己的位置。
 
@@ -554,7 +554,7 @@ jsPlumb的锚点分为四类
 
 ## 2.19. 节点缩放
 
-[demo-19](./demo/19.html)
+demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/19.html
 
 ```
  window.jsPlumb.ready(function () {
