@@ -1,7 +1,7 @@
-[查看在线文档](https://wdd.js.org/jsplumb-chinese-tutorial/#/)
+[查看在线Pages文档](https://wdd.js.org/jsplumb-chinese-tutorial/#/)
+[直接查看仓库中的文档](./docs/README.md)
 
 # 目录简介
-
 
 - 1. jsplumb 中文基础教程
   - 1.1. 什么是jsplumb？
@@ -37,14 +37,12 @@
 
 # Todolist
 
-
-
-- 流程图
-- 状态机
-- 拖放
-- 边缘锚点
-- 分级节点
-- 整个节点作为源或者目标
-- 动态锚点
-- 动画
-- 分组
+- [ ] 流程图
+- [ ] 状态机
+- [ ] 拖放
+- [ ] 边缘锚点
+- [ ] 分级节点
+- [ ] 整个节点作为源或者目标
+- [ ] 动态锚点
+- [ ] 动画
+- [ ] 分组
