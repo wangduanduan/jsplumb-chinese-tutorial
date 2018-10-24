@@ -31,7 +31,7 @@
 
 ## 2.1. 连接两个节点
 
-[demo-1](./demos/01.html)
+demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/01.html
 
 jsPlumb.ready方法和jquery的ready方法差不多的功能，jsPlumb.connect用于建立连线
 
