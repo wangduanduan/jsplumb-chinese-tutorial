@@ -41,7 +41,7 @@
 
 后续更新会在仓库：https://github.com/wangduanduan/jsplumb-chinese-tutorial.git
 
-> 阅读建议：由于本脚本目录太多，建议安装谷歌浏览器插件[Smart TOC](https://chrome.google.com/webstore/detail/smart-toc/lifgeihcfpkmmlfjbailfpfhbahhibba)，方便目录按照目录跳转查看。
+> 阅读建议：由于本教程目录太多，建议安装谷歌浏览器插件[Smart TOC](https://chrome.google.com/webstore/detail/smart-toc/lifgeihcfpkmmlfjbailfpfhbahhibba)，方便目录按照目录跳转查看。
 
 ## 1.1. 什么是jsplumb？
 你有没有想过在你的网站上展示图表或者甚至在浏览器应用程序中使用它？用jsPlumb你可以！它是完全免费的，并根据MIT许可证提供。您可以直接从jsPlumb github网站下载框架。
