@@ -749,11 +749,6 @@ jsPlumb.importDefaults({
 
 图1是基于jsplumb做的最基础的版本，图2是最近优化后的版本，该版本未开源。
 
-![](./images/20180414105705_PbucQp_Jietu20180414-105646.jpeg)
-
-【图1】
-
-
 ![](./images/20180628154158_hryb52_Jietu20180628-153918.jpeg)
 【图2】
 
