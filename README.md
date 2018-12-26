@@ -26,7 +26,6 @@
   - [2.19. 节点缩放](#219-节点缩放)
 - [3. jsPlumb默认配置简介](#3-jsplumb默认配置简介)
 - [4. 有没有稍微复杂一点，带有拖放的栗子？](#4-有没有稍微复杂一点带有拖放的栗子)
-- [5. 实战项目 一个可视化IVR编辑器](#5-实战项目-一个可视化ivr编辑器)
 - [6. 还有哪些类似的图形连线可视化项目](#6-还有哪些类似的图形连线可视化项目)
   - [6.1. G6 AntV](#61-g6-antv)
   - [6.2. VivaGraphJS](#62-vivagraphjs)
@@ -734,23 +733,16 @@ jsPlumb.importDefaults({
 ```
 
 # 4. 有没有稍微复杂一点，带有拖放的栗子？
-项目地址：https://github.com/wangduanduan/visual-ivr ，将views目录下的drag-drop-demo.html拖放到浏览器中，就可以愉快的玩耍了。
-
-从该demo中除了可以学到基本的jsplumb的api, 也可以学到其他的关于拖放的知识点。其中目前只做了语音节点的拖放，其他的还时间做。该demo没有使用webpack打包，代码写的有点乱，大家凑合着看，有问题可以提issue, 或者评论。
+项目地址：https://github.com/wangduanduan/visual-ivr
+在线demo: https://wdd.js.org/visual-ivr/
 
 ![](./images/20180425224658_pFg6BG_Jietu20180425-224640.jpeg)
 
+上图是基于jsplumb做的最基础的demo版本。
 
-# 5. 实战项目 一个可视化IVR编辑器
-
-项目地址：https://github.com/wangduanduan/visual-ivr 该项目还在开发完善中，不过已经具备基本功能。
-
-该项目是用webpack打包的项目，所有文件都在src目录下。
-
-图1是基于jsplumb做的最基础的版本，图2是最近优化后的版本，该版本未开源。
+下图是是最近优化后的版本，该版本未开源。
 
 ![](./images/20180628154158_hryb52_Jietu20180628-153918.jpeg)
-【图2】
 
 # 6. 还有哪些类似的图形连线可视化项目
 
