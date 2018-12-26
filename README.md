@@ -736,7 +736,7 @@ jsPlumb.importDefaults({
 项目地址：https://github.com/wangduanduan/visual-ivr
 在线demo: https://wdd.js.org/visual-ivr/
 
-![](./images/20180425224658_pFg6BG_Jietu20180425-224640.jpeg)
+![](./images/Jietu20181226-123854.jpg)
 
 上图是基于jsplumb做的最基础的demo版本。
 
