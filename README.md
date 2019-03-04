@@ -533,6 +533,8 @@ jsPlumb.bind('beforeDrop', function (info) {
 
 ## 2.17. 一个端点如何拖拽出多条连线
 
+demo https://wdd.js.org/jsplumb-chinese-tutorial/demos/17.html
+
 默认情况下，`maxConnections`的值是1，也就是一个端点最多只能拉出一条连线。
 
 你也可以设置成其他值，例如5，表示最多可以有5条连线。
