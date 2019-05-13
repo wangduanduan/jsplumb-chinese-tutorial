@@ -742,7 +742,7 @@ jsPlumb.importDefaults({
 
 上图是基于jsplumb做的最基础的demo版本。
 
-下图是是最近优化后的版本，该版本未开源。
+下图是是最近优化后的版本
 
 ![](./images/20180628154158_hryb52_Jietu20180628-153918.jpeg)
 
