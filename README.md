@@ -4,6 +4,12 @@
   - [1.1. 什么是jsplumb？](#11-什么是jsplumb)
   - [1.2. jsplumb能干什么？](#12-jsplumb能干什么)
   - [1.3. 基本概念](#13-基本概念)
+    - [1.3.1. Anchors [todo]](#131-anchors-todo)
+    - [1.3.2. Connectors [todo]](#132-connectors-todo)
+    - [1.3.3. Endpoints [todo]](#133-endpoints-todo)
+    - [1.3.4. Overlays [todo]](#134-overlays-todo)
+    - [1.3.5. Groups [todo]](#135-groups-todo)
+  - [1.4. 样式设置 [todo]](#14-样式设置-todo)
 - [2. 基础demos](#2-基础demos)
   - [2.1. 连接两个节点](#21-连接两个节点)
   - [2.2. 可拖动节点](#22-可拖动节点)
@@ -78,12 +84,79 @@
 
 - Souce 源节点
 - Target 目标节点
-- Anchor 锚点
-- Endpoint 端点
-- Connector 连接
+- Anchor 锚点 锚点位于源节点或者目标节点上
+- Endpoint 端点 端点位于连线上
+- Connector 连接 或者也可以理解是连接线
+- Overlays 可以理解为在连接线上的文字或者箭头之类的东东
 
 ![](./images/20180227151857_Pu4O9c_jsPlumb-Connector-Components.jpeg)
 
+### 1.3.1. Anchors [todo]
+锚点类型：
+- 静态锚点
+- 动态锚点
+- 边缘锚点
+- 固定锚点
+
+### 1.3.2. Connectors [todo]
+连线类型：
+- Bezier 贝塞尔曲线
+- Straight 直线
+- Flowchart 90度转角线
+- State Machine 状态机 
+
+### 1.3.3. Endpoints [todo]
+端点类型:
+- Dot 圆点
+- Rectangle 矩形
+- Image 图像
+- Blank 空白
+
+### 1.3.4. Overlays [todo]
+
+Overlays可以理解为在连接线上的文字或者箭头之类的东东
+
+Overlays类型
+- Arrow
+- Label
+- PlainArrow
+- Diamond
+- Custom
+
+```js
+// 连线上overlay可以多个，
+// 每个overlay可以指定相对位置
+// label类型的overlay实际上可以在里面直接写html
+// 
+jsPlumb.connect({
+  ...
+  connectorOverlays: [
+    ['Arrow', {
+      width: 10,
+      length: 10,
+      location: 1
+    }],
+    ['Label', {
+      label: '<button class="delete-node-btn">X</button>',
+      cssClass: '',
+      labelStyle: {
+        color: 'red'
+      },
+      events: {
+        click: function (labelOverlay, originalEvent) {
+          console.log('click on label overlay for :' + labelOverlay.component)
+          console.log(labelOverlay)
+          console.log(originalEvent)
+        }
+      }
+    }]
+  ]
+});
+```
+
+### 1.3.5. Groups [todo]
+
+## 1.4. 样式设置 [todo]
 
 # 2. 基础demos
 
