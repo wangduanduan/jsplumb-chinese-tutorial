@@ -51,14 +51,30 @@
     - [3.2.2. Endpoint Events](#322-endpoint-events)
     - [3.2.3. Overlay Events](#323-overlay-events)
 - [4. jsPlumb默认配置简介](#4-jsplumb默认配置简介)
-- [5. 有没有稍微复杂一点，带有拖放的栗子？](#5-有没有稍微复杂一点带有拖放的栗子)
-- [6. 还有哪些类似的图形连线可视化项目](#6-还有哪些类似的图形连线可视化项目)
-  - [6.1. G6 AntV](#61-g6-antv)
-  - [6.2. VivaGraphJS](#62-vivagraphjs)
-  - [6.3. springy](#63-springy)
-  - [6.4. graphviz](#64-graphviz)
-  - [6.5. visjs](#65-visjs)
-- [7. 参考资源](#7-参考资源)
+- [5. 工具函数](#5-工具函数)
+  - [5.1. 重绘某个元素 jsPlumb.revalidate](#51-重绘某个元素-jsplumbrevalidate)
+  - [5.2. 重绘所有元素 jsPlumb.repaintEverything](#52-重绘所有元素-jsplumbrepainteverything)
+  - [5.3. 重设节点ID jsPlumb.setId](#53-重设节点id-jsplumbsetid)
+  - [5.4. 删除节点 jsPlumb.remove](#54-删除节点-jsplumbremove)
+  - [5.5. 清空所有节点连接和端点 jsPlumb.empty](#55-清空所有节点连接和端点-jsplumbempty)
+  - [5.6. 移除连线 jsPlumb.detach](#56-移除连线-jsplumbdetach)
+  - [5.7. 移除某个节点上的所有连线 jsPlumb.deleteConnectionsForElement](#57-移除某个节点上的所有连线-jsplumbdeleteconnectionsforelement)
+  - [5.8. 移除所有节点上的连线 jsPlumb.detachEveryConnection()](#58-移除所有节点上的连线-jsplumbdetacheveryconnection)
+  - [5.9. 移除某个节点上的端点](#59-移除某个节点上的端点)
+  - [5.10. 移除所有节点上的端点](#510-移除所有节点上的端点)
+  - [5.11. 元素的显示与隐藏](#511-元素的显示与隐藏)
+- [6. 样式修改](#6-样式修改)
+  - [6.1. 通过css添加样式](#61-通过css添加样式)
+  - [6.2. paintStyle属性添加](#62-paintstyle属性添加)
+- [7. 查询 [todo]](#7-查询-todo)
+- [8. 有没有稍微复杂一点，带有拖放的栗子？](#8-有没有稍微复杂一点带有拖放的栗子)
+- [9. 还有哪些类似的图形连线可视化项目](#9-还有哪些类似的图形连线可视化项目)
+  - [9.1. G6 AntV](#91-g6-antv)
+  - [9.2. VivaGraphJS](#92-vivagraphjs)
+  - [9.3. springy](#93-springy)
+  - [9.4. graphviz](#94-graphviz)
+  - [9.5. visjs](#95-visjs)
+- [10. 参考资源](#10-参考资源)
 
 <!-- /TOC -->
 
@@ -977,7 +993,120 @@ jsPlumb.importDefaults({
 });
 ```
 
-# 5. 有没有稍微复杂一点，带有拖放的栗子？
+# 5. 工具函数
+## 5.1. 重绘某个元素 jsPlumb.revalidate
+
+```js
+jsPlumb.revalidate(el)
+```
+
+关于 el:
+
+- a string, representing the id of some element
+- a list of strings, representing the ids of some elements
+- a DOM element
+- a list of DOM elements
+- a selector from your underlying library
+
+
+## 5.2. 重绘所有元素 jsPlumb.repaintEverything
+
+```js
+jsPlumb.repaintEverything()
+```
+
+## 5.3. 重设节点ID jsPlumb.setId
+
+节点的ID对jsPlumb的重要性不言而喻，有时候我们需要改变节点的id, 那么需要显式的告诉jsPlumb节点id改变了。
+
+```js
+jsPlumb.setId(el, newId);
+// 或者
+jsPlumb.setIdChanged(oldId, newId);
+```
+
+## 5.4. 删除节点 jsPlumb.remove
+
+```js
+var conn = jsPlumb.connect({source:"element1", target:"element2"});
+...
+jsPlumb.remove("element1");
+```
+
+## 5.5. 清空所有节点连接和端点 jsPlumb.empty
+
+```js
+var conn = jsPlumb.connect({source:"one", target:"someOtherElement"});
+...
+jsPlumb.empty("list");
+```
+
+## 5.6. 移除连线 jsPlumb.detach
+
+```js
+var conn = jsPlumb.connect({ some params});
+...
+jsPlumb.detach(conn);
+```
+
+## 5.7. 移除某个节点上的所有连线 jsPlumb.deleteConnectionsForElement
+
+```js
+jsPlumb.deleteConnectionsForElement(el, [params])
+```
+
+## 5.8. 移除所有节点上的连线 jsPlumb.detachEveryConnection()
+
+```js
+jsPlumb.detachEveryConnection()
+```
+
+## 5.9. 移除某个节点上的端点
+
+```js
+var ep = jsPlumb.addEndpoint(someElement, { ... });
+...
+jsPlumb.deleteEndpoint(ep);
+```
+
+## 5.10. 移除所有节点上的端点
+
+```js
+jsPlumb.deleteEveryEndpoint();
+```
+
+## 5.11. 元素的显示与隐藏
+
+```js
+jsPlumb.hide("window5"); // 隐藏节点的所有连线
+jsPlumb.hide("window5", true); // 隐藏节点的所有端点
+jsPlumb.show("window5"); // 显示节点的所有连线
+jsPlumb.toggleVisible("window5"); // 反转显示节点的连线
+jsPlumb.show("window5", true); // 显示节点的所有连线和端点
+```
+
+
+# 6. 样式修改
+## 6.1. 通过css添加样式
+
+参考：http://jsplumb.github.io/jsplumb/styling-via-css.html
+
+
+## 6.2. paintStyle属性添加
+
+参考：http://jsplumb.github.io/jsplumb/paint-styles.html
+
+```js
+jsPlumb.connect({
+    source:"el1",
+    target:"el2",
+    paintStyle:{ stroke:"blue", strokeWidth:10 }
+});
+```
+
+# 7. 查询 [todo]
+
+# 8. 有没有稍微复杂一点，带有拖放的栗子？
 项目地址：https://github.com/wangduanduan/visual-ivr
 在线demo: https://wdd.js.org/visual-ivr/
 
@@ -989,15 +1118,15 @@ jsPlumb.importDefaults({
 
 ![](./images/20180628154158_hryb52_Jietu20180628-153918.jpeg)
 
-# 6. 还有哪些类似的图形连线可视化项目
+# 9. 还有哪些类似的图形连线可视化项目
 
-## 6.1. G6 AntV 
+## 9.1. G6 AntV 
 
 https://github.com/antvis/g6
 
 ![](./images/20180611171335_XWq41h_Jietu20180611-171327.jpeg)
 
-## 6.2. VivaGraphJS 
+## 9.2. VivaGraphJS 
 
 https://github.com/anvaka/VivaGraphJS
 
@@ -1005,13 +1134,13 @@ https://github.com/anvaka/VivaGraphJS
 
 ![](./images/20180611171745_mwZc75_Jietu20180611-171731.jpeg)
 
-## 6.3. springy 
+## 9.3. springy 
 
 https://github.com/dhotson/springy
 
 ![](./images/20180611171213_XS3vL4_Jietu20180611-171206.jpeg)
 
-## 6.4. graphviz
+## 9.4. graphviz
 
 https://www.graphviz.org/about/
 
@@ -1038,7 +1167,7 @@ mac上首先要安装：`brew install graphviz`
 ![](./images/20180626102715_wPb7pW_dfd2.jpeg)
 
 
-## 6.5. visjs
+## 9.5. visjs
 
 http://visjs.org/index.html
 
@@ -1050,7 +1179,7 @@ http://visjs.org/index.html
 
 
 
-# 7. 参考资源
+# 10. 参考资源
 - [jsPlumb Class](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
 - [freedevelopertutorials jsplumb-tutorial](http://www.freedevelopertutorials.com/jsplumb-tutorial/)
 
