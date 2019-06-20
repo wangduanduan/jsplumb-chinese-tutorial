@@ -67,14 +67,15 @@
   - [6.1. 通过css添加样式](#61-通过css添加样式)
   - [6.2. paintStyle属性添加](#62-paintstyle属性添加)
 - [7. 查询 [todo]](#7-查询-todo)
-- [8. 有没有稍微复杂一点，带有拖放的栗子？](#8-有没有稍微复杂一点带有拖放的栗子)
-- [9. 还有哪些类似的图形连线可视化项目](#9-还有哪些类似的图形连线可视化项目)
-  - [9.1. G6 AntV](#91-g6-antv)
-  - [9.2. VivaGraphJS](#92-vivagraphjs)
-  - [9.3. springy](#93-springy)
-  - [9.4. graphviz](#94-graphviz)
-  - [9.5. visjs](#95-visjs)
-- [10. 参考资源](#10-参考资源)
+- [8. 视图与数据结构同步](#8-视图与数据结构同步)
+- [9. 有没有稍微复杂一点，带有拖放的栗子？](#9-有没有稍微复杂一点带有拖放的栗子)
+- [10. 还有哪些类似的图形连线可视化项目](#10-还有哪些类似的图形连线可视化项目)
+  - [10.1. G6 AntV](#101-g6-antv)
+  - [10.2. VivaGraphJS](#102-vivagraphjs)
+  - [10.3. springy](#103-springy)
+  - [10.4. graphviz](#104-graphviz)
+  - [10.5. visjs](#105-visjs)
+- [11. 参考资源](#11-参考资源)
 
 <!-- /TOC -->
 
@@ -1106,7 +1107,46 @@ jsPlumb.connect({
 
 # 7. 查询 [todo]
 
-# 8. 有没有稍微复杂一点，带有拖放的栗子？
+# 8. 视图与数据结构同步
+
+**首先，jsplumb并不维护你的数据结构。** 你的数据结构你自己维护，如果页面发生改变，jsplumb会通过事件通知你。你通过事件去改变你的数据。
+
+熟悉react或者vue的，会有点熟悉，这不就是单向数据流吗？
+
+1. 通过渲染逻辑将基本数据结构渲染成连线图
+2. 连线图发生改变，如发生连线之类的，jsplumb会通过事件告诉你
+3. 你需要处理jsplumb给你的事件，然后修改你的基本数据
+
+![](./images/Jietu20190620-133950.jpg)
+
+```js
+[
+{
+  id: 1,
+  link: ''
+}, 
+{
+  id: 2,
+  link: ''
+}]
+```
+
+当你收到连接建立事件后，例如1连接到了2， 你需要修改这个数据结构。
+
+```js
+[
+{
+  id: 1,
+  link: '2'
+}, 
+{
+  id: 2,
+  link: ''
+}]
+```
+
+
+# 9. 有没有稍微复杂一点，带有拖放的栗子？
 项目地址：https://github.com/wangduanduan/visual-ivr
 在线demo: https://wdd.js.org/visual-ivr/
 
@@ -1118,15 +1158,15 @@ jsPlumb.connect({
 
 ![](./images/20180628154158_hryb52_Jietu20180628-153918.jpeg)
 
-# 9. 还有哪些类似的图形连线可视化项目
+# 10. 还有哪些类似的图形连线可视化项目
 
-## 9.1. G6 AntV 
+## 10.1. G6 AntV 
 
 https://github.com/antvis/g6
 
 ![](./images/20180611171335_XWq41h_Jietu20180611-171327.jpeg)
 
-## 9.2. VivaGraphJS 
+## 10.2. VivaGraphJS 
 
 https://github.com/anvaka/VivaGraphJS
 
@@ -1134,13 +1174,13 @@ https://github.com/anvaka/VivaGraphJS
 
 ![](./images/20180611171745_mwZc75_Jietu20180611-171731.jpeg)
 
-## 9.3. springy 
+## 10.3. springy 
 
 https://github.com/dhotson/springy
 
 ![](./images/20180611171213_XS3vL4_Jietu20180611-171206.jpeg)
 
-## 9.4. graphviz
+## 10.4. graphviz
 
 https://www.graphviz.org/about/
 
@@ -1167,7 +1207,7 @@ mac上首先要安装：`brew install graphviz`
 ![](./images/20180626102715_wPb7pW_dfd2.jpeg)
 
 
-## 9.5. visjs
+## 10.5. visjs
 
 http://visjs.org/index.html
 
@@ -1179,7 +1219,7 @@ http://visjs.org/index.html
 
 
 
-# 10. 参考资源
+# 11. 参考资源
 - [jsPlumb Class](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
 - [freedevelopertutorials jsplumb-tutorial](http://www.freedevelopertutorials.com/jsplumb-tutorial/)
 
