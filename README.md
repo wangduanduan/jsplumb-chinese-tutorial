@@ -520,11 +520,14 @@ demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/11.html
 
 默认情况下，节点可以被拖动到区域外边，如果想只能在区域内拖动，需要设置containment，这样节点只能在固定区域内移动。
 
+实际上上这个功能是使用jQueryUI的功能，所以函数的使用可以参考jQueryUI的文档。https://jqueryui.com/draggable/#constrain-movement
 
 ![](./images/20180227195859_fFawMs_Jietu20180227-195844.jpeg)
 
 ```
-jsPlumb.setContainer('area-id')
+jsPlumb.draggable('item_left', {containment: 'parent'})
+jsPlumb.draggable('item_right', {containment: 'parent'})
+jsPlumb.draggable('some-id', {containment: "#containment-wrapper"})
 ```
 
 ## 2.12. 节点网格对齐
