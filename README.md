@@ -1223,7 +1223,5 @@ http://visjs.org/index.html
 
 
 # 11. 参考资源
-- [jsPlumb Class](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumb.html)
-- [freedevelopertutorials jsplumb-tutorial](http://www.freedevelopertutorials.com/jsplumb-tutorial/)
 
-
+- [官方文档](http://jsplumb.github.io/jsplumb/home.html)
