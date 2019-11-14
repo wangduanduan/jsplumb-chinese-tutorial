@@ -1,80 +1,80 @@
 <!-- TOC -->
 
 - [1. jsplumb 中文基础教程](#1-jsplumb-中文基础教程)
-    - [1.1. 什么是jsplumb？](#11-什么是jsplumb)
-    - [1.2. jsplumb能干什么？](#12-jsplumb能干什么)
-    - [1.3. 基本概念](#13-基本概念)
-        - [1.3.1. Anchors [todo]](#131-anchors-todo)
-        - [1.3.2. Connectors [todo]](#132-connectors-todo)
-        - [1.3.3. Endpoints [todo]](#133-endpoints-todo)
-        - [1.3.4. Overlays [todo]](#134-overlays-todo)
-        - [1.3.5. Groups [todo]](#135-groups-todo)
-    - [1.4. 样式设置 [todo]](#14-样式设置-todo)
+  - [1.1. 什么是jsplumb？](#11-什么是jsplumb)
+  - [1.2. jsplumb能干什么？](#12-jsplumb能干什么)
+  - [1.3. 基本概念](#13-基本概念)
+    - [1.3.1. Anchors [todo]](#131-anchors-todo)
+    - [1.3.2. Connectors [todo]](#132-connectors-todo)
+    - [1.3.3. Endpoints [todo]](#133-endpoints-todo)
+    - [1.3.4. Overlays [todo]](#134-overlays-todo)
+    - [1.3.5. Groups [todo]](#135-groups-todo)
+  - [1.4. 样式设置 [todo]](#14-样式设置-todo)
 - [2. 基础demos](#2-基础demos)
-    - [2.1. 连接两个节点](#21-连接两个节点)
-    - [2.2. 可拖动节点](#22-可拖动节点)
-    - [2.3. 连接的其他参数](#23-连接的其他参数)
-    - [2.4. 设置连接的默认值](#24-设置连接的默认值)
-    - [2.5. 给连接加上样式](#25-给连接加上样式)
-    - [2.6. 给连接加上箭头](#26-给连接加上箭头)
-    - [2.7. 增加一个端点](#27-增加一个端点)
-    - [2.8. 拖动创建连接](#28-拖动创建连接)
-    - [2.9. 给端点增加样式](#29-给端点增加样式)
-    - [2.10. 节点改变尺寸](#210-节点改变尺寸)
-    - [2.11. 限制节点拖动区域](#211-限制节点拖动区域)
-    - [2.12. 节点网格对齐](#212-节点网格对齐)
-    - [2.13. 给连接添加点击事件：点击删除连线](#213-给连接添加点击事件点击删除连线)
-    - [2.14. 删除节点，包括节点相关的连接](#214-删除节点包括节点相关的连接)
-    - [2.15. 通过编码连接endPoint](#215-通过编码连接endpoint)
-    - [2.16. 连接前的检查，判断是否建立连接](#216-连接前的检查判断是否建立连接)
-    - [2.17. 一个端点如何拖拽出多条连线](#217-一个端点如何拖拽出多条连线)
-    - [2.18. 整个节点作为source或者target](#218-整个节点作为source或者target)
-    - [2.19. 节点缩放](#219-节点缩放)
+  - [2.1. 连接两个节点](#21-连接两个节点)
+  - [2.2. 可拖动节点](#22-可拖动节点)
+  - [2.3. 连接的其他参数](#23-连接的其他参数)
+  - [2.4. 设置连接的默认值](#24-设置连接的默认值)
+  - [2.5. 给连接加上样式](#25-给连接加上样式)
+  - [2.6. 给连接加上箭头](#26-给连接加上箭头)
+  - [2.7. 增加一个端点](#27-增加一个端点)
+  - [2.8. 拖动创建连接](#28-拖动创建连接)
+  - [2.9. 给端点增加样式](#29-给端点增加样式)
+  - [2.10. 节点改变尺寸](#210-节点改变尺寸)
+  - [2.11. 限制节点拖动区域](#211-限制节点拖动区域)
+  - [2.12. 节点网格对齐](#212-节点网格对齐)
+  - [2.13. 给连接添加点击事件：点击删除连线](#213-给连接添加点击事件点击删除连线)
+  - [2.14. 删除节点，包括节点相关的连接](#214-删除节点包括节点相关的连接)
+  - [2.15. 通过编码连接endPoint](#215-通过编码连接endpoint)
+  - [2.16. 连接前的检查，判断是否建立连接](#216-连接前的检查判断是否建立连接)
+  - [2.17. 一个端点如何拖拽出多条连线](#217-一个端点如何拖拽出多条连线)
+  - [2.18. 整个节点作为source或者target](#218-整个节点作为source或者target)
+  - [2.19. 节点缩放](#219-节点缩放)
 - [3. jsPlumb事件列表](#3-jsplumb事件列表)
-    - [3.1. 常用事件](#31-常用事件)
-        - [3.1.1. connection 连接建立时触发](#311-connection-连接建立时触发)
-        - [3.1.2. connectionDetached 连接断开时触发](#312-connectiondetached-连接断开时触发)
-        - [3.1.3. connectionMoved 连接移动事件](#313-connectionmoved-连接移动事件)
-        - [3.1.4. connectionAborted 连接取消事件](#314-connectionaborted-连接取消事件)
-        - [3.1.5. click 连接点击事件](#315-click-连接点击事件)
-        - [3.1.6. dblclick 连接双击事件](#316-dblclick-连接双击事件)
-        - [3.1.7. connectionDrag 连接拖动事件](#317-connectiondrag-连接拖动事件)
-        - [3.1.8. connectionDragStop 连接停止拖动事件](#318-connectiondragstop-连接停止拖动事件)
-        - [3.1.9. endpointClick 端点单击事件](#319-endpointclick-端点单击事件)
-        - [3.1.10. endpointDblClick 端点双击事件](#3110-endpointdblclick-端点双击事件)
-        - [3.1.11. contextmenu 鼠标右键事件](#3111-contextmenu-鼠标右键事件)
-        - [3.1.12. beforeDrop 连接建立前事件](#3112-beforedrop-连接建立前事件)
-        - [3.1.13. beforeDetach 连接断开前事件](#3113-beforedetach-连接断开前事件)
-        - [3.1.14. zoom 缩放事件](#3114-zoom-缩放事件)
-    - [3.2. 其他事件](#32-其他事件)
-        - [3.2.1. Connection Events](#321-connection-events)
-        - [3.2.2. Endpoint Events](#322-endpoint-events)
-        - [3.2.3. Overlay Events](#323-overlay-events)
+  - [3.1. 常用事件](#31-常用事件)
+    - [3.1.1. connection 连接建立时触发](#311-connection-连接建立时触发)
+    - [3.1.2. connectionDetached 连接断开时触发](#312-connectiondetached-连接断开时触发)
+    - [3.1.3. connectionMoved 连接移动事件](#313-connectionmoved-连接移动事件)
+    - [3.1.4. connectionAborted 连接取消事件](#314-connectionaborted-连接取消事件)
+    - [3.1.5. click 连接点击事件](#315-click-连接点击事件)
+    - [3.1.6. dblclick 连接双击事件](#316-dblclick-连接双击事件)
+    - [3.1.7. connectionDrag 连接拖动事件](#317-connectiondrag-连接拖动事件)
+    - [3.1.8. connectionDragStop 连接停止拖动事件](#318-connectiondragstop-连接停止拖动事件)
+    - [3.1.9. endpointClick 端点单击事件](#319-endpointclick-端点单击事件)
+    - [3.1.10. endpointDblClick 端点双击事件](#3110-endpointdblclick-端点双击事件)
+    - [3.1.11. contextmenu 鼠标右键事件](#3111-contextmenu-鼠标右键事件)
+    - [3.1.12. beforeDrop 连接建立前事件](#3112-beforedrop-连接建立前事件)
+    - [3.1.13. beforeDetach 连接断开前事件](#3113-beforedetach-连接断开前事件)
+    - [3.1.14. zoom 缩放事件](#3114-zoom-缩放事件)
+  - [3.2. 其他事件](#32-其他事件)
+    - [3.2.1. Connection Events](#321-connection-events)
+    - [3.2.2. Endpoint Events](#322-endpoint-events)
+    - [3.2.3. Overlay Events](#323-overlay-events)
 - [4. jsPlumb默认配置简介](#4-jsplumb默认配置简介)
 - [5. 工具函数](#5-工具函数)
-    - [5.1. 重绘某个元素 jsPlumb.revalidate](#51-重绘某个元素-jsplumbrevalidate)
-    - [5.2. 重绘所有元素 jsPlumb.repaintEverything](#52-重绘所有元素-jsplumbrepainteverything)
-    - [5.3. 重设节点ID jsPlumb.setId](#53-重设节点id-jsplumbsetid)
-    - [5.4. 删除节点 jsPlumb.remove](#54-删除节点-jsplumbremove)
-    - [5.5. 清空所有节点连接和端点 jsPlumb.empty](#55-清空所有节点连接和端点-jsplumbempty)
-    - [5.6. 移除连线 jsPlumb.detach](#56-移除连线-jsplumbdetach)
-    - [5.7. 移除某个节点上的所有连线 jsPlumb.deleteConnectionsForElement](#57-移除某个节点上的所有连线-jsplumbdeleteconnectionsforelement)
-    - [5.8. 移除所有节点上的连线 jsPlumb.deleteEveryConnection()](#58-移除所有节点上的连线-jsplumbdeleteeveryconnection)
-    - [5.9. 移除某个节点上的端点](#59-移除某个节点上的端点)
-    - [5.10. 移除所有节点上的端点](#510-移除所有节点上的端点)
-    - [5.11. 元素的显示与隐藏](#511-元素的显示与隐藏)
+  - [5.1. 重绘某个元素 jsPlumb.revalidate](#51-重绘某个元素-jsplumbrevalidate)
+  - [5.2. 重绘所有元素 jsPlumb.repaintEverything](#52-重绘所有元素-jsplumbrepainteverything)
+  - [5.3. 重设节点ID jsPlumb.setId](#53-重设节点id-jsplumbsetid)
+  - [5.4. 删除节点 jsPlumb.remove](#54-删除节点-jsplumbremove)
+  - [5.5. 清空所有节点连接和端点 jsPlumb.empty](#55-清空所有节点连接和端点-jsplumbempty)
+  - [5.6. 移除连线 jsPlumb.detach](#56-移除连线-jsplumbdetach)
+  - [5.7. 移除某个节点上的所有连线 jsPlumb.deleteConnectionsForElement](#57-移除某个节点上的所有连线-jsplumbdeleteconnectionsforelement)
+  - [5.8. 移除所有节点上的连线 jsPlumb.deleteEveryConnection()](#58-移除所有节点上的连线-jsplumbdeleteeveryconnection)
+  - [5.9. 移除某个节点上的端点](#59-移除某个节点上的端点)
+  - [5.10. 移除所有节点上的端点](#510-移除所有节点上的端点)
+  - [5.11. 元素的显示与隐藏](#511-元素的显示与隐藏)
 - [6. 样式修改](#6-样式修改)
-    - [6.1. 通过css添加样式](#61-通过css添加样式)
-    - [6.2. paintStyle属性添加](#62-paintstyle属性添加)
+  - [6.1. 通过css添加样式](#61-通过css添加样式)
+  - [6.2. paintStyle属性添加](#62-paintstyle属性添加)
 - [7. 查询 [todo]](#7-查询-todo)
 - [8. 视图与数据结构同步](#8-视图与数据结构同步)
 - [9. 有没有稍微复杂一点，带有拖放的栗子？](#9-有没有稍微复杂一点带有拖放的栗子)
 - [10. 还有哪些类似的图形连线可视化项目](#10-还有哪些类似的图形连线可视化项目)
-    - [10.1. G6 AntV](#101-g6-antv)
-    - [10.2. VivaGraphJS](#102-vivagraphjs)
-    - [10.3. springy](#103-springy)
-    - [10.4. graphviz](#104-graphviz)
-    - [10.5. visjs](#105-visjs)
+  - [10.1. G6 AntV](#101-g6-antv)
+  - [10.2. VivaGraphJS](#102-vivagraphjs)
+  - [10.3. springy](#103-springy)
+  - [10.4. graphviz](#104-graphviz)
+  - [10.5. visjs](#105-visjs)
 - [11. 参考资源](#11-参考资源)
 
 <!-- /TOC -->
@@ -215,14 +215,14 @@ source | String,Object,Endpoint | 是 | 连线源的标识，可以是id, elemen
 target | String,Object,Endpoint | 是 | 连线目标的标识，可以是id, element, 或者Endpoint
 endpoint | String | 可选 | 端点类型，形状
 
-[>>> connect方法详情](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumbInstance.html#method_connect)
+[>>> connect方法详情](https://github.com/jsplumb/jsplumb/blob/da6688b86fbfba621bf3685e4431a4d9be7213b4/doc/api/jsplumb-api.js#L76)
 
 
 ## 2.2. 可拖动节点
 
 demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/02.html
 
-使用draggable可以让节点被拖动，[draggable方法参考](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumbInstance.html#method_draggable)
+使用draggable可以让节点被拖动，[draggable方法参考](https://github.com/jsplumb/jsplumb/blob/da6688b86fbfba621bf3685e4431a4d9be7213b4/doc/api/jsplumb-api.js#L690)
 
 ![](./images/20180227191655_GOJLi1_Jietu20180227-191647.jpeg)
 
@@ -341,7 +341,7 @@ demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/06.html
 
 `overlays`也是一个比较重要的概念，overlays可以理解为遮罩层。遮罩层不仅仅可以设置箭头，也可以设置其他内容。
 
-overlays有五种类型，下面给出简介。具体使用方法参见 https://jsplumbtoolkit.com/community/doc/overlays.html 
+overlays有五种类型，下面给出简介。具体使用方法参见 http://jsplumb.github.io/jsplumb/overlays.html
 
 - `Arrow` 一个可配置的箭头
 - `Label` 标签，可以在连接上显示文字信息
@@ -365,7 +365,7 @@ jsPlumb.connect({
 
 demo: https://wdd.js.org/jsplumb-chinese-tutorial/demos/07.html
 
-addEndpoint方法可以用来增加端点，[具体使用请看](https://jsplumbtoolkit.com/community/apidocs/classes/jsPlumbInstance.html#method_addEndpoint)
+addEndpoint方法可以用来增加端点，[具体使用请看](https://github.com/jsplumb/jsplumb/blob/da6688b86fbfba621bf3685e4431a4d9be7213b4/doc/api/jsplumb-api.js#L57)
 
 ![](./images/20180227193308_wYaELY_Jietu20180227-193254.jpeg)
 
@@ -588,7 +588,7 @@ jsPlumb支持许多事件
 - Overlay Events
 - Unbinding Events
 
-参考用法参考：https://jsplumbtoolkit.com/community/doc/events.html#jsPlumbEvents
+参考用法参考：https://github.com/jsplumb/jsplumb/blob/da6688b86f/doc/wiki/events.md
 
 ## 2.14. 删除节点，包括节点相关的连接
 
@@ -604,7 +604,7 @@ setTimeout(function () {
 }, 3000)
 ```
 
-注意remove方法有些情况下是无法删除干净连线的，[详情](https://jsplumbtoolkit.com/community/doc/removing.html)
+注意remove方法有些情况下是无法删除干净连线的，[详情](https://github.com/jsplumb/jsplumb/blob/da6688b86fbfba621bf3685e4431a4d9be7213b4/doc/api/jsplumb-api.js#L648)
 
 ## 2.15. 通过编码连接endPoint
 
@@ -690,7 +690,7 @@ jsPlumb的锚点分为四类
 - `Perimeter` 边缘锚点，会根据节点形状去改变位置
 - `Continuous` 根据节点位置，自动调整位置的锚点
 
-详情：https://jsplumbtoolkit.com/community/doc/anchors.html
+详情：https://github.com/jsplumb/jsplumb/blob/da6688b86f/doc/wiki/anchors.md
 
 ```
     window.jsPlumb.ready(function () {
@@ -896,7 +896,7 @@ jsPlumb.connect({
 
 # 4. jsPlumb默认配置简介
 
-参考地址: https://jsplumbtoolkit.com/community/doc/defaults.html
+参考地址: https://github.com/jsplumb/jsplumb/blob/da6688b86f/doc/wiki/defaults.md
 
 jsPlumb的配置项有很多，如果你不主动去设置，那么jsPlumb就使用默认的配置。
 
