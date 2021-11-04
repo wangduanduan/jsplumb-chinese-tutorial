@@ -1160,7 +1160,12 @@ jsPlumb.connect({
 下图是是最近优化后的版本
 
 ![](./images/20180628154158_hryb52_Jietu20180628-153918.jpeg)
+******
+模仿官网database-visualizer实现sqlflow数据血缘流程图的demo
 
+项目地址：https://github.com/mizuhokaga/jsplumb-dataLineage
+
+![](https://github.com/mizuhokaga/jsplumb-dataLineage/raw/master/imgs/myflow.png)
 # 10. 还有哪些类似的图形连线可视化项目
 
 ## 10.1. G6 AntV 
