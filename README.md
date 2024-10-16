@@ -1,3 +1,20 @@
+在2024年这个时间点，流程图框架选型有太多可选择的框架了，没必要选择jsplumb。 
+
+1. jsplumb本身就是10年前开发，用的技术栈可能比较老旧
+2. jsplumb的开源协议并不太友好
+
+你可以访问：https://github.com/topics/flowchart  在这个话题下，有很多的框架可以选择。
+
+例如：
+
+- https://github.com/xyflow/xyflow
+- https://github.com/didi/LogicFlow
+- https://github.com/alyssaxuu/flowy
+- https://github.com/antvis/X6
+- https://github.com/bcakmakoglu/vue-flow
+
+----
+
 <!-- TOC -->
 
 - [1. jsplumb 中文基础教程](#1-jsplumb-中文基础教程)
